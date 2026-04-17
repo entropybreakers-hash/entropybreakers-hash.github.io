@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entropy Breakers — Bettina Baranyi · Angol Mentor Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+:root{
+  --bg:#0a0806;
+  --bg2:#110d0a;
+  --bg3:#0d0b09;
+  --cream:#f0ebe3;
+  --cream2:#c8c1b8;
+  --dim:#5a5450;
+  --dimmer:#3a3530;
+  --orange:#d4763b;
+  --orange2:#bf6530;
+  --border:rgba(240,235,227,0.08);
+  --border2:rgba(240,235,227,0.14);
+}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--cream);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px}
+
+/* TYPOGRAPHY HELPERS */
+.serif{font-family:'Cormorant Garamond',serif}
+.italic{font-style:italic}
+em{font-style:italic;color:var(--orange)}
+em.plain{color:inherit}
+.orange{color:var(--orange)}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:64px;padding:0 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .35s;
+}
+nav.solid{background:rgba(10,8,6,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:flex;align-items:baseline;gap:5px}
+.logo i{font-style:italic;color:var(--orange);font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:.04em}
+.nav-cta{font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--bg);background:var(--orange);text-decoration:none;padding:11px 26px;border-radius:60px;transition:background .2s}
+.nav-cta:hover{background:var(--orange2)}
+
+/* HERO — getclientready-style, centered portrait */
+.hero{
+  position:relative;
+  padding:100px 24px 0;
+  background:var(--bg);
+  overflow:hidden;
+}
+.hero-inner{
+  max-width:720px;
+  margin:0 auto;
+  position:relative;
+}
+.hero-portrait-wrap{
+  position:relative;
+  width:100%;
+  height:64vh;
+  min-height:420px;
+  max-height:720px;
+  margin-bottom:-8px;
+}
+.hero-portrait-wrap img{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  height:100%;
+  width:auto;
+  max-width:none;
+  object-fit:contain;
+  object-position:bottom center;
+}
+.hero-portrait-wrap::after{
+  content:'';
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:80px;
+  background:linear-gradient(180deg,transparent,var(--bg));
+  pointer-events:none;
+}
+.hero-text{
+  position:relative;
+  z-index:2;
+  padding:8px 0 48px;
+  text-align:left;
+}
+.hero-label{
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:22px;
+  font-weight:600;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:64px;
+  font-weight:600;
+  line-height:.96;
+  letter-spacing:-.015em;
+  color:var(--cream);
+  margin:0 0 28px;
+}
+.hero h1 .line{display:block}
+.hero h1 .italic-line{
+  display:block;
+  font-style:italic;
+  font-weight:500;
+  color:var(--orange);
+  margin-top:4px;
+}
+.hero-sub{
+  font-size:17px;
+  font-weight:400;
+  line-height:1.55;
+  color:var(--cream);
+  margin:0 0 12px;
+}
+.hero-sub strong{color:var(--cream);font-weight:600}
+.hero-meta{
+  font-size:14px;
+  color:var(--cream2);
+  margin:0 0 32px;
+  line-height:1.5;
+  opacity:.75;
+}
+.hero-cta-wrap{
+  padding-bottom:48px;
+}
+.btn-primary-big{
+  display:block;
+  width:100%;
+  background:linear-gradient(180deg,#e8884d 0%,#c96a2e 100%);
+  color:#fff;
+  padding:24px 32px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  text-decoration:none;
+  border-radius:60px;
+  transition:all .25s;
+  box-shadow:0 14px 36px rgba(212,118,59,.3);
+  box-sizing:border-box;
+  text-align:center;
+}
+.btn-primary-big:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 48px rgba(212,118,59,.42);
+}
+.hero-foot{
+  margin-top:18px;
+  font-size:11px;
+  color:var(--dim);
+  letter-spacing:.08em;
+  text-align:center;
+}
+
+/* Desktop — go wider + bigger type, portrait much bigger */
+@media (min-width:960px){
+  .hero{padding:130px 48px 0}
+  .hero-inner{max-width:920px}
+  .hero-portrait-wrap{height:72vh;min-height:560px;max-height:820px}
+  .hero h1{font-size:88px}
+  .hero-sub{font-size:19px}
+}
+@media (min-width:1280px){
+  .hero-inner{max-width:1040px}
+  .hero h1{font-size:104px;letter-spacing:-.02em}
+}
+@media (max-width:520px){
+  .hero{padding:90px 20px 0}
+  .hero h1{font-size:48px}
+  .hero-portrait-wrap{height:58vh;min-height:380px}
+  .btn-primary-big{padding:20px 24px;font-size:11px}
+}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.r.on{opacity:1;transform:none}
+.r.d1{transition-delay:.08s}.r.d2{transition-delay:.16s}.r.d3{transition-delay:.24s}
+.r.d4{transition-delay:.32s}.r.d5{transition-delay:.4s}.r.d6{transition-delay:.48s}
+
+/* SECTION SHELL */
+.sec{padding:112px 40px;position:relative}
+.wrap{max-width:1160px;margin:0 auto}
+.wrap-narrow{max-width:780px;margin:0 auto}
+.wrap-mid{max-width:960px;margin:0 auto}
+.sec-eyebrow{
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+}
+.sec-eyebrow::before{content:'';width:24px;height:1px;background:var(--orange)}
+.sec-eyebrow.center{justify-content:center;text-align:center}
+.sec-eyebrow.center::before{display:none}
+.sec-eyebrow.center::after{display:none}
+.sec-h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(36px,4.5vw,58px);
+  font-weight:500;line-height:1.05;
+  letter-spacing:-.01em;color:var(--cream);
+  margin-bottom:24px;
+}
+.sec-h2.center{text-align:center}
+.sec-lead{
+  font-size:16px;font-weight:300;line-height:1.75;
+  color:var(--cream2);
+}
+.sec-lead.center{text-align:center;max-width:640px;margin:0 auto}
+
+/* NEM-KELL BLOCK (equivalent of "You DON'T need") */
+.nemkell-sec{background:var(--bg)}
+.nemkell-head{text-align:center;max-width:760px;margin:0 auto 72px}
+.nemkell-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.nemkell-card{
+  padding:40px 32px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:4px;
+  transition:border-color .3s,transform .3s;
+}
+.nemkell-card:hover{border-color:rgba(212,118,59,.3);transform:translateY(-3px)}
+.nemkell-x{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-style:italic;font-weight:400;
+  color:var(--orange);line-height:1;margin-bottom:18px;
+  opacity:.85;
+}
+.nemkell-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;line-height:1.25;
+  color:var(--cream);margin-bottom:14px;
+  letter-spacing:-.005em;
+}
+.nemkell-b{
+  font-size:13.5px;font-weight:300;line-height:1.7;
+  color:var(--cream2);opacity:.85;
+}
+
+/* URGENCY / STOP BLOCK */
+.stop-sec{
+  padding:120px 40px;
+  background:linear-gradient(155deg,#c96a2e 0%,#a8531f 100%);
+  text-align:center;position:relative;overflow:hidden;
+}
+.stop-sec::after{
+  content:'EB';position:absolute;
+  right:-60px;bottom:-120px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:380px;font-weight:600;font-style:italic;
+  color:rgba(0,0,0,.06);line-height:1;pointer-events:none;
+}
+.stop-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(34px,4.2vw,52px);
+  font-weight:500;line-height:1.15;color:#fff;
+  max-width:820px;margin:0 auto 20px;position:relative;
+  letter-spacing:-.005em;
+}
+.stop-h em{color:rgba(255,255,255,.88);font-style:italic}
+.stop-sub{
+  font-size:16px;color:rgba(255,255,255,.82);font-weight:300;
+  max-width:580px;margin:0 auto 40px;line-height:1.7;position:relative;
+}
+.btn-light{
+  display:inline-block;background:var(--bg);color:var(--cream);
+  padding:17px 44px;font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;
+  text-decoration:none;border-radius:60px;
+  transition:all .25s;position:relative;
+}
+.btn-light:hover{background:#1a1410;transform:translateY(-2px)}
+
+/* AFTER YOU JOIN (benefits) */
+.after-sec{background:var(--bg)}
+.after-head{text-align:center;max-width:720px;margin:0 auto 72px}
+.after-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:2px}
+.after-item{
+  padding:40px 0;
+  border-bottom:1px solid var(--border);
+  display:grid;
+  grid-template-columns:60px 1fr;
+  gap:32px;
+  align-items:start;
+}
+.after-item:last-child{border-bottom:none}
+.after-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:38px;font-weight:400;font-style:italic;
+  color:var(--orange);line-height:1;
+}
+.after-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;font-weight:500;line-height:1.25;
+  color:var(--cream);margin-bottom:12px;
+  letter-spacing:-.005em;
+}
+.after-b{
+  font-size:14.5px;font-weight:300;line-height:1.8;
+  color:var(--cream2);
+}
+
+/* PROBLEM / SOLUTION / RESULT (three-block diagnostic) */
+.psr-sec{background:var(--bg2)}
+.psr-grid{
+  max-width:1100px;margin:60px auto 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.psr-card{
+  padding:44px 36px;
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:4px;
+  position:relative;
+}
+.psr-card.highlight{
+  background:linear-gradient(160deg,rgba(212,118,59,.08) 0%,transparent 60%);
+  border-color:rgba(212,118,59,.25);
+}
+.psr-label{
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:24px;
+  font-weight:500;
+}
+.psr-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;font-weight:500;line-height:1.25;
+  color:var(--cream);margin-bottom:18px;
+  letter-spacing:-.005em;
+}
+.psr-b{
+  font-size:14px;font-weight:300;line-height:1.75;
+  color:var(--cream2);
+}
+.psr-stats{
+  margin-top:20px;padding-top:20px;
+  border-top:1px solid var(--border);
+  display:flex;flex-direction:column;gap:10px;
+}
+.psr-stat{
+  font-size:12.5px;color:var(--cream);font-weight:400;
+  display:flex;align-items:baseline;gap:10px;
+}
+.psr-stat::before{
+  content:'→';color:var(--orange);font-size:13px;flex-shrink:0;
+}
+.psr-stat strong{color:var(--orange);font-weight:500}
+
+/* TWO PATHS */
+.paths-sec{background:var(--bg)}
+.paths-intro{text-align:center;max-width:720px;margin:0 auto 64px}
+.paths-grid{
+  max-width:1040px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:28px;
+}
+.path-card{
+  padding:52px 44px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:4px;
+}
+.path-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--orange);font-weight:500;margin-bottom:12px;
+}
+.path-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;font-weight:500;line-height:1.2;
+  color:var(--cream);margin-bottom:28px;
+  letter-spacing:-.005em;
+}
+.path-title em{color:var(--orange);font-style:italic}
+.path-heading{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cream);font-weight:500;margin:20px 0 14px;
+}
+.path-heading:first-of-type{margin-top:0}
+.path-list{list-style:none}
+.path-list li{
+  font-size:14px;font-weight:300;line-height:1.7;
+  color:var(--cream2);padding:6px 0 6px 22px;position:relative;
+}
+.path-list li::before{
+  content:'•';color:var(--orange);font-size:18px;
+  position:absolute;left:0;top:4px;line-height:1;
+}
+
+/* PROGRAM STRUCTURE (step-by-step modules) */
+.prog-sec{background:var(--bg2)}
+.prog-head{text-align:center;max-width:720px;margin:0 auto 64px}
+.prog-h2 em{color:var(--orange);font-style:italic}
+.prog-list{max-width:900px;margin:0 auto}
+.prog-item{
+  padding:48px 0;
+  border-bottom:1px solid var(--border);
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:40px;
+  align-items:start;
+}
+.prog-item:last-child{border-bottom:none}
+.prog-num-wrap{position:relative}
+.prog-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:72px;font-weight:400;font-style:italic;
+  color:rgba(212,118,59,.2);
+  line-height:.9;
+}
+.prog-step-label{
+  font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--orange);margin-top:-10px;font-weight:500;
+}
+.prog-content .prog-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;font-weight:500;line-height:1.25;
+  color:var(--cream);margin-bottom:14px;
+  letter-spacing:-.005em;
+}
+.prog-lead{
+  font-size:14.5px;font-weight:300;line-height:1.75;
+  color:var(--cream2);margin-bottom:20px;
+}
+.prog-outcomes{
+  padding:20px 22px;
+  background:var(--bg3);
+  border-left:2px solid var(--orange);
+  border-radius:0 4px 4px 0;
+}
+.prog-outcomes-lbl{
+  font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--orange);font-weight:500;margin-bottom:10px;
+}
+.prog-outcomes-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.prog-outcomes-list li{
+  font-size:13px;font-weight:300;line-height:1.65;
+  color:var(--cream);padding-left:18px;position:relative;
+}
+.prog-outcomes-list li::before{
+  content:'→';color:var(--orange);font-size:12px;
+  position:absolute;left:0;top:2px;
+}
+
+/* MENTOR (Bettina about block) */
+.mentor-sec{background:var(--bg3);padding:120px 40px}
+.mentor-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;
+  grid-template-columns:0.85fr 1.15fr;
+  gap:72px;
+  align-items:center;
+}
+.mentor-portrait{
+  position:relative;
+  height:620px;
+  overflow:hidden;
+}
+.mentor-portrait img{
+  position:absolute;bottom:0;left:50%;
+  transform:translateX(-50%);
+  height:102%;width:auto;
+  max-width:none;
+  object-fit:contain;
+  object-position:bottom center;
+}
+
+.mentor-eyebrow{
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;
+}
+.mentor-eyebrow::before{content:'';width:24px;height:1px;background:var(--orange)}
+.mentor-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(44px,5vw,68px);
+  font-weight:500;line-height:1;
+  color:var(--cream);margin-bottom:8px;
+  letter-spacing:-.015em;
+}
+.mentor-name em{font-style:italic;color:var(--orange)}
+.mentor-role{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:36px;
+}
+.mentor-stars{
+  display:flex;gap:4px;margin-bottom:28px;
+}
+.mentor-stars span{color:var(--orange);font-size:13px}
+.mentor-creds{list-style:none;display:flex;flex-direction:column;gap:18px}
+.mentor-creds li{
+  font-size:14.5px;font-weight:300;line-height:1.7;
+  color:var(--cream2);padding-left:22px;position:relative;
+}
+.mentor-creds li strong{color:var(--cream);font-weight:500}
+.mentor-creds li::before{
+  content:'';position:absolute;left:0;top:12px;
+  width:10px;height:1px;background:var(--orange);
+}
+
+/* TESTIMONIALS */
+.testi-sec{background:var(--bg);padding:120px 40px}
+.testi-head{text-align:center;max-width:760px;margin:0 auto 72px}
+.testi-grid{
+  max-width:1200px;margin:0 auto;
+  columns:3;
+  column-gap:24px;
+}
+.testi-card{
+  break-inside:avoid;
+  margin-bottom:24px;
+  padding:36px 32px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:4px;
+  transition:border-color .3s;
+}
+.testi-card:hover{border-color:rgba(212,118,59,.28)}
+.testi-stars{
+  display:flex;gap:3px;margin-bottom:18px;
+}
+.testi-stars span{color:var(--orange);font-size:11px}
+.testi-body{
+  font-size:14.5px;font-weight:300;line-height:1.75;
+  color:var(--cream);margin-bottom:22px;
+  font-family:'DM Sans',sans-serif;
+}
+.testi-body em{color:var(--cream2);font-style:normal}
+.testi-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;font-weight:500;font-style:italic;
+  color:var(--orange);
+  letter-spacing:.01em;
+}
+.testi-meta{
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin-top:4px;
+}
+
+/* PRICING TIERS */
+.pkg-sec{background:var(--bg2);padding:120px 40px}
+.pkg-head{text-align:center;max-width:720px;margin:0 auto 72px}
+.pkg-grid{
+  max-width:1160px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  align-items:stretch;
+}
+.pkg{
+  padding:52px 40px;
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:4px;
+  display:flex;flex-direction:column;
+  position:relative;
+}
+.pkg.hot{
+  background:linear-gradient(165deg,#c96a2e 0%,#a8531f 100%);
+  border-color:transparent;
+  transform:scale(1.03);
+}
+.pkg.hot::before{
+  content:'Legnépszerűbb';
+  position:absolute;top:-12px;left:50%;
+  transform:translateX(-50%);
+  background:var(--bg);
+  color:var(--orange);
+  font-size:9px;letter-spacing:.24em;text-transform:uppercase;
+  font-weight:500;padding:7px 18px;
+  border:1px solid rgba(212,118,59,.5);
+  border-radius:60px;
+}
+.pkg-lbl{
+  font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:10px;font-weight:500;
+}
+.pkg.hot .pkg-lbl{color:rgba(255,255,255,.75)}
+.pkg-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:40px;font-weight:500;line-height:1;
+  color:var(--cream);margin-bottom:8px;
+  letter-spacing:-.01em;
+}
+.pkg.hot .pkg-n{color:#fff}
+.pkg-sub{
+  font-size:13px;color:var(--cream2);margin-bottom:36px;
+  line-height:1.55;font-weight:300;
+}
+.pkg.hot .pkg-sub{color:rgba(255,255,255,.78)}
+.pkg-list{list-style:none;margin-bottom:36px;flex:1}
+.pkg-list li{
+  font-size:13.5px;font-weight:300;
+  color:var(--cream);padding:11px 0;
+  border-bottom:1px solid var(--border);
+  display:flex;gap:10px;align-items:flex-start;
+  line-height:1.5;
+}
+.pkg-list li::before{
+  content:'✓';color:var(--orange);
+  font-size:13px;flex-shrink:0;font-weight:600;
+}
+.pkg-list li.strike{color:var(--dimmer);text-decoration:line-through}
+.pkg-list li.strike::before{content:'✕';color:var(--dimmer);text-decoration:none;font-weight:400}
+.pkg.hot .pkg-list li{color:rgba(255,255,255,.92);border-color:rgba(255,255,255,.15)}
+.pkg.hot .pkg-list li::before{color:#fff}
+.pkg.hot .pkg-list li.strike{color:rgba(255,255,255,.35)}
+.pkg.hot .pkg-list li.strike::before{color:rgba(255,255,255,.35)}
+.pkg-btn{
+  display:block;text-align:center;
+  padding:15px 24px;
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;text-decoration:none;
+  border:1px solid rgba(240,235,227,.18);
+  color:var(--cream);border-radius:60px;
+  transition:all .25s;
+}
+.pkg-btn:hover{border-color:var(--orange);color:var(--orange);background:rgba(212,118,59,.05)}
+.pkg.hot .pkg-btn{
+  background:var(--bg);border-color:var(--bg);color:var(--cream);
+}
+.pkg.hot .pkg-btn:hover{background:#1a1410;color:#fff}
+
+/* FINAL CTA (cream section) */
+.final-sec{
+  background:#f0ebe3;color:#1a1410;
+  padding:120px 40px;text-align:center;
+}
+.final-sec .sec-eyebrow{color:var(--orange);justify-content:center}
+.final-sec .sec-eyebrow::before{display:none}
+.final-sec h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(38px,4.8vw,62px);font-weight:500;
+  line-height:1.08;color:#1a1410;margin-bottom:24px;
+  letter-spacing:-.01em;
+}
+.final-sec h2 em{color:var(--orange);font-style:italic}
+.final-sec p{
+  font-size:16px;font-weight:300;line-height:1.75;
+  color:#5a5450;max-width:580px;margin:0 auto 20px;
+}
+.final-portrait{
+  width:300px;margin:48px auto 0;
+}
+.final-portrait img{width:100%;height:auto;display:block}
+.btn-dark{
+  display:inline-block;margin-top:44px;
+  background:#1a1410;color:#f0ebe3;
+  padding:17px 46px;
+  font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+  text-decoration:none;border-radius:60px;
+  transition:all .25s;
+}
+.btn-dark:hover{background:#2a2018;transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.24)}
+
+/* FAQ */
+.faq-sec{background:var(--bg);padding:120px 40px}
+.faq-head{text-align:center;max-width:680px;margin:0 auto 56px}
+.faq-wrap{max-width:740px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{
+  padding:26px 0;
+  font-size:15.5px;font-weight:400;
+  color:var(--cream);
+  display:flex;justify-content:space-between;align-items:center;
+  cursor:pointer;gap:24px;
+  transition:color .25s;user-select:none;
+}
+.faq-q:hover{color:var(--orange)}
+.faq-q::after{
+  content:'+';font-size:22px;color:var(--orange);
+  flex-shrink:0;font-weight:300;
+  transition:transform .35s;line-height:1;
+}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{
+  font-size:14px;font-weight:300;
+  color:var(--cream2);line-height:1.8;
+  max-height:0;overflow:hidden;
+  transition:max-height .45s ease,padding .3s;
+  opacity:.85;
+}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:24px}
+
+/* FOOTER */
+footer{
+  background:var(--bg3);
+  padding:36px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(212,118,59,.22);
+}
+.ft-logo{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim);font-weight:500}
+.ft-email{font-size:13px;color:var(--dim);text-decoration:none;transition:color .25s}
+.ft-email:hover{color:var(--orange)}
+.ft-copy{font-size:10px;color:var(--dimmer);letter-spacing:.1em}
+
+/* RESPONSIVE */
+@media (max-width:960px){
+  nav{padding:0 20px}
+  .sec{padding:80px 24px}
+  .nemkell-grid{grid-template-columns:1fr;gap:16px}
+  .psr-grid{grid-template-columns:1fr;gap:16px}
+  .paths-grid{grid-template-columns:1fr;gap:16px}
+  .prog-item{grid-template-columns:1fr;gap:16px}
+  .prog-num{font-size:52px}
+  .mentor-sec{padding:72px 24px}
+  .mentor-grid{grid-template-columns:1fr;gap:40px}
+  .mentor-portrait{height:440px}
+  .testi-sec{padding:80px 24px}
+  .testi-grid{columns:1}
+  .pkg-sec{padding:80px 24px}
+  .pkg-grid{grid-template-columns:1fr;gap:16px}
+  .pkg.hot{transform:none}
+  .final-sec{padding:80px 24px}
+  .faq-sec{padding:80px 24px}
+  .stop-sec{padding:80px 24px}
+  .impl-strip{padding:32px 20px}
+  .impl-inner{gap:24px;flex-direction:column}
+  .impl-names{gap:20px}
+  footer{flex-direction:column;gap:14px;text-align:center;padding:28px 20px}
+  .after-item{grid-template-columns:1fr;gap:12px}
+  .after-n{font-size:32px}
+}
+
+@media (max-width:520px){
+  .testi-grid{columns:1}
+  .nemkell-grid,.psr-grid{gap:14px}
+}
+
+/* SCREENSHOT GALLERY — uniform 2-column grid, compact */
+.scr-sec{
+  background:var(--bg);
+  padding:80px 40px 100px;
+}
+.scr-head-big{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 56px;
+}
+.scr-head-big h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:34px;
+  font-weight:500;
+  line-height:1.2;
+  color:var(--cream);
+  letter-spacing:-.005em;
+}
+.scr-head-big h2 em{color:var(--orange);font-style:italic}
+
+.scr-grid{
+  max-width:640px;
+  margin:0 auto;
+  columns:2;
+  column-gap:14px;
+}
+.scr-grid .scr-card{
+  break-inside:avoid;
+  margin-bottom:14px;
+  display:block;
+}
+.scr-grid .scr-card-last{
+  break-inside:avoid;
+  margin:14px auto 0;
+  max-width:50%;
+  column-span:all;
+  display:block;
+}
+.scr-card{
+  background:var(--bg2);
+  padding:6px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  transition:transform .3s,border-color .3s;
+}
+.scr-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(212,118,59,.28);
+}
+.scr-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:6px;
+}
+
+
+@media (min-width:960px){
+  .scr-head-big h2{font-size:44px}
+  .scr-grid{max-width:920px;column-gap:20px}
+  .scr-grid .scr-card{margin-bottom:20px}
+}
+@media (min-width:1280px){
+  .scr-grid{max-width:1040px;column-gap:24px}
+  .scr-grid .scr-card{margin-bottom:24px}
+}
+
+@media (max-width:520px){
+  .scr-sec{padding:60px 20px 80px}
+  .scr-head-big{margin-bottom:40px}
+  .scr-head-big h2{font-size:28px}
+  .scr-grid{column-gap:10px;max-width:480px}
+  .scr-grid .scr-card{margin-bottom:10px}
+}
+
+
+
+.pkg-price{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  font-weight:500;
+  color:var(--cream);
+  line-height:1;
+  margin:24px 0 8px;
+  letter-spacing:-.01em;
+}
+.pkg.hot .pkg-price{color:#fff}
+.pkg-price-unit{
+  font-size:13px;
+  font-weight:400;
+  color:var(--cream2);
+  margin-bottom:28px;
+  font-family:'DM Sans',sans-serif;
+  font-style:italic;
+}
+.pkg.hot .pkg-price-unit{color:rgba(255,255,255,.8)}
+
+
+/* ============================================================
+   CREAM SECTIONS — mentor + program (light breathing moments)
+   ============================================================ */
+
+/* === MENTOR SECTION ON CREAM === */
+.mentor-sec{
+  background:var(--cream);
+  color:#1a1410;
+}
+.mentor-name{color:#1a1410}
+.mentor-name em{color:var(--orange)}
+.mentor-role{color:#8a7f75}
+.mentor-eyebrow{color:var(--orange)}
+.mentor-creds li{color:#3d3530}
+.mentor-creds li strong{color:#1a1410}
+/* Dashed bullets on cream */
+.mentor-creds li::before{color:var(--orange)}
+
+/* === PROGRAM FELÉPÍTÉS ON CREAM === */
+.prog-sec{
+  background:var(--cream);
+  color:#1a1410;
+}
+.prog-head h2{color:#1a1410}
+.prog-head h2 em{color:var(--orange)}
+.prog-lead{color:#3d3530}
+.prog-title{color:#1a1410}
+.sec-eyebrow{color:var(--orange)}
+.prog-step-label{color:var(--orange)}
+.prog-num{color:rgba(212,118,59,.35)}
+.prog-item{border-bottom:1px solid rgba(26,20,16,0.1)}
+/* Outcomes box — subtle warm cream-on-cream card */
+.prog-outcomes{
+  background:rgba(212,118,59,.07);
+  border-left:2px solid var(--orange);
+}
+.prog-outcomes-lbl{color:var(--orange)}
+.prog-outcomes-list li{color:#1a1410}
+.prog-outcomes-list li::before{color:var(--orange)}
+/* Section lead text (center under h2) */
+.prog-head .sec-lead{color:#3d3530}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="nav">
+  <a class="logo" href="#">Entropy&nbsp;<i>Breakers</i></a>
+  <a class="nav-cta" href="#csomagok">Szintfelmérő</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-portrait-wrap">
+      <img src="images/bettina-baranyi.png" alt="Bettina Baranyi" loading="lazy">
+    </div>
+    <div class="hero-text">
+      <p class="hero-label">Bettina Baranyi · Angol Mentor Program</p>
+      <h1>
+        <span class="line">Építsd fel</span>
+        <span class="line">az első valódi</span>
+        <span class="line">áttörésed</span>
+        <span class="italic-line">9 hét alatt.</span>
+      </h1>
+      <p class="hero-sub">Lépésről lépésre felépített rendszer <strong>500+ tanuló</strong> tapasztalatából.</p>
+      <p class="hero-meta">7+ év mentori tapasztalat · 24/7 AI visszajelzés · Személyre szabva.</p>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#csomagok" class="btn-primary-big">Csatlakozom a programhoz</a>
+      <p class="hero-foot">Szintfelmérő · 100% ingyenes · 24 órán belül válasz</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCREENSHOT GALLERY (11 screenshots, masonry layout, balanced columns) -->
+<section class="scr-sec">
+  <div class="scr-head-big r">
+    <h2>Ők már <em>elindították</em> a rendszerünkben <em>az áttörést</em></h2>
+  </div>
+  <div class="scr-grid">
+    <div class="scr-card r"><img src="images/dorina-porcellan-uzenete.jpg" alt="Dorina Porcellán üzenete" loading="lazy"></div>
+    <div class="scr-card r d1"><img src="images/amira-uzenete.jpg" alt="Amira üzenete" loading="lazy"></div>
+    <div class="scr-card r"><img src="images/patrik-kantor-uzenete.jpg" alt="Patrik Kántor üzenete" loading="lazy"></div>
+    <div class="scr-card r d1"><img src="images/palika-nyitrai-uzenete.jpg" alt="Palika Nyitrai üzenete" loading="lazy"></div>
+    <div class="scr-card r"><img src="images/mark-uzenete.jpg" alt="Márk üzenete" loading="lazy"></div>
+    <div class="scr-card r d1"><img src="images/nora-racz-uzenete.jpg" alt="Nóra Rácz üzenete" loading="lazy"></div>
+    <div class="scr-card r"><img src="images/erik-uzenete.jpg" alt="Erik üzenete" loading="lazy"></div>
+    <div class="scr-card r d1"><img src="images/sikeres-nyelvvizsga.jpg" alt="Sikeres nyelvvizsga" loading="lazy"></div>
+    <div class="scr-card r"><img src="images/vivien-szilagyi-uzenete.jpg" alt="Vivien Szilágyi üzenete" loading="lazy"></div>
+    <div class="scr-card r d1"><img src="images/emese-bajnai-uzenete.jpg" alt="Emese Bajnai üzenete" loading="lazy"></div>
+    <div class="scr-card scr-card-last r"><img src="images/szabo-tunde-bettike-meg-van.jpg" alt="Szabó Tünde — Bettike meg van!" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- NEM KELL (equivalent of "You DON'T need") -->
+<section class="sec nemkell-sec">
+  <div class="nemkell-head r">
+    <p class="sec-eyebrow center">Amire gondolod, hogy szükséged lenne</p>
+    <h2 class="sec-h2 center">Nem kell <em>tökéletesnek</em> lenned ahhoz, hogy elkezdd</h2>
+    <p class="sec-lead center">A legtöbb tanulóm azt hitte, hogy ezek a dolgok mind szükségesek. Nem azok. Ezért nem jutottak előbbre — egy rendszer nélkül próbálkoztak.</p>
+  </div>
+  <div class="nemkell-grid">
+    <div class="nemkell-card r">
+      <div class="nemkell-x">✕</div>
+      <h3 class="nemkell-t">NEM kell tökéletes nyelvtan</h3>
+      <p class="nemkell-b">Elég, ha az alapok megvannak — a többit együtt építjük fel, a te valódi beszédhelyzeteidre szabva.</p>
+    </div>
+    <div class="nemkell-card r d1">
+      <div class="nemkell-x">✕</div>
+      <h3 class="nemkell-t">NEM kell napi 2 óra tanulás</h3>
+      <p class="nemkell-b">A rendszer heti 1-2 órára épül + rövid, célzott gyakorlásra. Ez mellett dolgozol, utazol, élsz.</p>
+    </div>
+    <div class="nemkell-card r d2">
+      <div class="nemkell-x">✕</div>
+      <h3 class="nemkell-t">NEM kell "nyelvtehetség"</h3>
+      <p class="nemkell-b">A nyelvtudás nem adottság kérdése, hanem módszeré. Ezt a tanulóim naponta bizonyítják.</p>
+    </div>
+    <div class="nemkell-card r d3">
+      <div class="nemkell-x">✕</div>
+      <h3 class="nemkell-t">NEM kell "végre bátornak" lenned</h3>
+      <p class="nemkell-b">Ítéletmentes, biztonságos környezetet kapsz, ahol a hibázás a fejlődés része — nem a kudarcé.</p>
+    </div>
+    <div class="nemkell-card r d4">
+      <div class="nemkell-x">✕</div>
+      <h3 class="nemkell-t">NEM kell megint elölről kezdeni</h3>
+      <p class="nemkell-b">A tudásod nincs elveszve — csak szétszóródott. Visszarendezzük és aktívvá tesszük, ami már benned van.</p>
+    </div>
+    <div class="nemkell-card r d5">
+      <div class="nemkell-x">✕</div>
+      <h3 class="nemkell-t">NEM kell hinned benne</h3>
+      <p class="nemkell-b">Nem kérem, hogy bízz bennem vakon. Kérem, hogy csináld velem 4 hétig — és utána döntsd el.</p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY / STOP BLOCK -->
+<section class="stop-sec">
+  <h2 class="stop-h r">Ne nézd tovább, hogy mások megtanulnak angolul — <em>amíg te ugyanott ragadsz</em></h2>
+  <p class="stop-sub r d1">A rendszer egyszerűsíti a belépést. Néhány hét alatt érezhetően magabiztosabb leszel — feltéve, hogy elindulsz.</p>
+  <a href="#csomagok" class="btn-light r d2">Kitöltöm a szintfelmérőt</a>
+</section>
+<!-- AFTER YOU JOIN -->
+<section class="sec after-sec">
+  <div class="after-head r">
+    <p class="sec-eyebrow center">Ez történik, ha csatlakozol</p>
+    <h2 class="sec-h2 center">Nem csak tanulod az angolt. <em>Végre használod.</em></h2>
+    <p class="sec-lead center">A programom nem egy újabb tanfolyam — hanem egy komplett rendszer, ami az órákon kívül is dolgozik érted.</p>
+  </div>
+  <div class="after-list">
+    <div class="after-item r">
+      <span class="after-n">01</span>
+      <div>
+        <h3 class="after-t">Kész rendszert kapsz, nem önmagad megmentését</h3>
+        <p class="after-b">Személyre szabott Notion diákoldal, 24/7 AI visszajelzés, lépésről lépésre felépített platform — minden egy helyen. Nem kell kitalálnod, mit csinálj két óra között: pontosan tudni fogod.</p>
+      </div>
+    </div>
+    <div class="after-item r">
+      <span class="after-n">02</span>
+      <div>
+        <h3 class="after-t">Az áttörést a rendszer építi, nem a szorgalom</h3>
+        <p class="after-b">A passzív és aktív tudás között van egy rés — és ezt nem akarattal, hanem strukturált gyakorlással lehet áthidalni. A módszer erre van tervezve, nem a motivációdra.</p>
+      </div>
+    </div>
+    <div class="after-item r">
+      <span class="after-n">03</span>
+      <div>
+        <h3 class="after-t">A te valódi helyzetedre szabva — nem egy tankönyvre</h3>
+        <p class="after-b">Business meeting? Amerikai kolléga? Nyelvvizsga? A mentoráláson pontosan arra készítelek fel, ami rád vár. Nem általános angol — a tiéd.</p>
+      </div>
+    </div>
+    <div class="after-item r">
+      <span class="after-n">04</span>
+      <div>
+        <h3 class="after-t">Mérhető fejlődés, nem ködös "javulás"</h3>
+        <p class="after-b">Pár héten belül érezhető változás — főleg önbizalomban. Az igazi áttörés általában 4-8 héten belül jön, ha következetesen haladunk együtt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION / RESULT -->
+<section class="sec psr-sec">
+  <div class="wrap-narrow" style="text-align:center;margin-bottom:0">
+    <p class="sec-eyebrow center r">A teljes kép</p>
+    <h2 class="sec-h2 center r d1">Három ok, amiért más tanárnál nem sikerült — <em>és itt fog</em></h2>
+  </div>
+  <div class="psr-grid">
+    <div class="psr-card r">
+      <p class="psr-label">A probléma</p>
+      <h3 class="psr-t">A legtöbb óra "frontális oktatás", nem rendszer</h3>
+      <p class="psr-b">Heti 1-2 óra önmagában soha nem volt elég. Ha a köztes időben nincs struktúra, pár nap után elúszik minden. Ezért nem jutottál előbbre — nem miattad.</p>
+    </div>
+    <div class="psr-card highlight r d1">
+      <p class="psr-label">A megoldás</p>
+      <h3 class="psr-t">Komplett ökoszisztéma, amit mi építünk neked</h3>
+      <p class="psr-b">Platform + személyre szabott Notion oldal + 24/7 AI visszajelzés + mentorálás. A rendszer minden nap aktív — akkor is, amikor te nem.</p>
+      <div class="psr-stats">
+        <div class="psr-stat"><strong>7+</strong> év mentori tapasztalat</div>
+        <div class="psr-stat"><strong>500+</strong> tanuló, akik áttörtek</div>
+        <div class="psr-stat"><strong>24/7</strong> AI visszajelzés</div>
+      </div>
+    </div>
+    <div class="psr-card r d2">
+      <p class="psr-label">Az eredmény</p>
+      <h3 class="psr-t">4-8 hét alatt érezhető, valódi magabiztosság</h3>
+      <p class="psr-b">Nem elméleti tudás — használható, élő angol. Meetingen, utazáson, vizsgán. Pár héten belül látod, pár hónap alatt átveszed az irányítást.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TWO PATHS -->
+<section class="sec paths-sec">
+  <div class="paths-intro r">
+    <p class="sec-eyebrow center">Kinek való ez a program</p>
+    <h2 class="sec-h2 center">A rendszer <em>kétféle emberre</em> van tervezve</h2>
+    <p class="sec-lead center">Mindegy, hol tartasz most — a módszer a te kiindulópontodra épül. Nem kezdünk mindent elölről.</p>
+  </div>
+  <div class="paths-grid">
+    <div class="path-card r">
+      <p class="path-num">1. Út — Újrakezdő</p>
+      <h3 class="path-title">A "<em>régen tudtam, most nem</em>" típus</h3>
+      <p class="path-heading">Te vagy, ha:</p>
+      <ul class="path-list">
+        <li>Gimnáziumban vagy egyetemen tanultál, de évek óta nem használtad</li>
+        <li>Érted, amit mondanak — de megszólalni nem mersz</li>
+        <li>Dolgozol, vállalkozol, családod van — nincs idő "elölről kezdeni"</li>
+        <li>Tudod, hogy benned van — csak elő kell hozni</li>
+      </ul>
+      <p class="path-heading">Mit kapsz tőlem:</p>
+      <ul class="path-list">
+        <li>Visszarendezzük az alapokat anélkül, hogy unnád</li>
+        <li>Aktivizáljuk a passzív tudást strukturált gyakorlással</li>
+        <li>A saját beszédhelyzeteidre szabott rendszert</li>
+        <li>Türelmes, ítéletmentes tempót — nincs szégyen</li>
+      </ul>
+    </div>
+    <div class="path-card r d1">
+      <p class="path-num">2. Út — Középhaladó</p>
+      <h3 class="path-title">A "<em>értek mindent, de rázós</em>" típus</h3>
+      <p class="path-heading">Te vagy, ha:</p>
+      <ul class="path-list">
+        <li>Már kommunikálsz angolul — de nem olyan magabiztosan, mint szeretnéd</li>
+        <li>Üzleti helyzetekben hezitálsz, vagy kiejtés-gondjaid vannak</li>
+        <li>Meetingen, interjún vagy prezentáción akarsz jobb lenni</li>
+        <li>Nyelvvizsgára készülsz vagy céges szintet akarsz emelni</li>
+      </ul>
+      <p class="path-heading">Mit kapsz tőlem:</p>
+      <ul class="path-list">
+        <li>Finomhangolás és célzott fejlesztés, nem általános anyag</li>
+        <li>Valódi üzleti/szakmai kontextus, nem tankönyvi párbeszéd</li>
+        <li>Kiejtés, intonáció, gyorsaság — a finom réteg</li>
+        <li>Felkészítés arra, ami rád vár — interjú, vizsga, külföldi munka</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- PROGRAM STRUCTURE -->
+<section class="sec prog-sec">
+  <div class="prog-head r">
+    <p class="sec-eyebrow center">A program felépítése</p>
+    <h2 class="sec-h2 center prog-h2">4 lépés, ami <em>valódi eredményt</em> hoz</h2>
+    <p class="sec-lead center">Nem tanfolyam. Nem lecke-sorozat. Egy lépésenként felépített rendszer, ami végigkísér az első naptól a teljes magabiztosságig.</p>
+  </div>
+  <div class="prog-list">
+    <div class="prog-item r">
+      <div class="prog-num-wrap">
+        <div class="prog-num">01</div>
+        <div class="prog-step-label">Kezdőpont</div>
+      </div>
+      <div class="prog-content">
+        <h3 class="prog-title">Szintfelmérés és valós célok</h3>
+        <p class="prog-lead">Első lépésként pontosan megnézzük, hol tartasz és mit akarsz elérni. Nem az van, hogy "A2-es vagy és kész". Azt nézzük, mit tudsz használni élő helyzetben, és mit akarsz 3, 6, 12 hónap múlva.</p>
+        <div class="prog-outcomes">
+          <p class="prog-outcomes-lbl">Eredmény</p>
+          <ul class="prog-outcomes-list">
+            <li>Konkrét szint-diagnózis, nem általános kategória</li>
+            <li>Személyre szabott ajánlás a megfelelő csomagra</li>
+            <li>Valódi, mérhető célok 4 / 12 / 24 hétre</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-item r">
+      <div class="prog-num-wrap">
+        <div class="prog-num">02</div>
+        <div class="prog-step-label">1. lépés</div>
+      </div>
+      <div class="prog-content">
+        <h3 class="prog-title">Személyre szabott rendszer felépítése</h3>
+        <p class="prog-lead">Elkészül a te Notion diákoldalad, a platform hozzáférés, az AI visszajelzés beállítása. Minden anyag, feladat, számonkérés a te szintedre és céljaidra van szabva — nem egy általános tananyag.</p>
+        <div class="prog-outcomes">
+          <p class="prog-outcomes-lbl">Eredmény</p>
+          <ul class="prog-outcomes-list">
+            <li>Saját digitális tanulóoldalad, amit tulajdonolsz</li>
+            <li>24/7 AI visszajelzés a gyakorlásodra</li>
+            <li>Strukturált tananyag, ami a te gyenge pontjaidra épít</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-item r">
+      <div class="prog-num-wrap">
+        <div class="prog-num">03</div>
+        <div class="prog-step-label">2. lépés</div>
+      </div>
+      <div class="prog-content">
+        <h3 class="prog-title">Heti mentorálás + napi gyakorlás</h3>
+        <p class="prog-lead">Heti 1-2 óra közös munka — és ami köztük van. A valódi áttörés az órákon kívül történik. A platform + AI visszajelzés + Notion oldal gondoskodik arról, hogy minden nap aktív legyen a fejlődésed.</p>
+        <div class="prog-outcomes">
+          <p class="prog-outcomes-lbl">Eredmény</p>
+          <ul class="prog-outcomes-list">
+            <li>Minden nap 10-20 perc aktív gyakorlás — strukturáltan</li>
+            <li>A hibáidból tanulsz, nem ismétled őket</li>
+            <li>Lépésről lépésre mérhető, látható fejlődés</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="prog-item r">
+      <div class="prog-num-wrap">
+        <div class="prog-num">04</div>
+        <div class="prog-step-label">3. lépés</div>
+      </div>
+      <div class="prog-content">
+        <h3 class="prog-title">Áttörés — magabiztos, valós használat</h3>
+        <p class="prog-lead">4-8 héten belül érezhető változás. Először az önbizalom jön vissza — aztán a folyamatos beszéd, a bonyolultabb helyzetek, a spontán reakciók. És ha eddig eljutottunk, onnan már a te döntésed, milyen messzire akarsz menni.</p>
+        <div class="prog-outcomes">
+          <p class="prog-outcomes-lbl">Eredmény</p>
+          <ul class="prog-outcomes-list">
+            <li>Valódi magabiztosság élő beszédhelyzetben</li>
+            <li>Meeting, interjú, nyelvvizsga — kezelhetővé válik</li>
+            <li>Önálló tanulási képesség, ami rajtad múlik innen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTOR (Bettina bio block) -->
+<section class="mentor-sec">
+  <div class="mentor-grid">
+    <div class="mentor-portrait r">
+      <img src="images/bettina-baranyi-2.png" alt="Bettina Baranyi" loading="lazy">
+    </div>
+    <div class="mentor-text">
+      <p class="mentor-eyebrow r">A mentorod</p>
+      <h2 class="mentor-name r">Bettina <em>Baranyi</em></h2>
+      <p class="mentor-role r">Angol Mentor · Entropy Breakers</p>
+      <div class="mentor-stars r d1"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <ul class="mentor-creds">
+        <li class="r d1">Több mint <strong>7 éves mentori tapasztalat</strong> — kezdőtől középhaladóig, szakmai és üzleti angolban egyaránt.</li>
+        <li class="r d2"><strong>500+ tanuló</strong> jutott át a "nem tudok megszólalni" falon a rendszeremmel, köztük vállalkozók, üzletemberek és nyelvvizsgára készülők.</li>
+        <li class="r d3">Türelmes, barátságos, ítéletmentes légkört teremtek, ahol a hibázás nem szégyen — hanem a <strong>fejlődés természetes része</strong>.</li>
+        <li class="r d4">A módszerem nem hagyományos tanóra, hanem <strong>komplett rendszer</strong>: platform, AI visszajelzés, Notion diákoldal, személyre szabott anyagok.</li>
+        <li class="r d5">Hiszem, hogy nincs "nyelvtehetség" — csak jó vagy rossz módszer. Ezt a tanulóim <strong>naponta bebizonyítják</strong>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pkg-sec" id="csomagok">
+  <div class="pkg-head r">
+    <p class="sec-eyebrow center">Válaszd ki a tempódat</p>
+    <h2 class="sec-h2 center">Három csomag. <em>Egy rendszer.</em></h2>
+    <p class="sec-lead center">A szintfelmérő után pontosan megmondom, melyik csomag illik hozzád. Minden csomag ugyanarra a rendszerre épül — a különbség a mélységben és a támogatás intenzitásában van.</p>
+  </div>
+  <div class="pkg-grid">
+
+    <div class="pkg r">
+      <p class="pkg-lbl">Alap</p>
+      <h3 class="pkg-n">Basic</h3>
+      <p class="pkg-sub">Belépőszint — heti egy közös óra, ha lépésről lépésre építenéd fel magad</p>
+      <div class="pkg-price">35 000 Ft</div>
+      <div class="pkg-price-unit">/ hónap</div>
+      <ul class="pkg-list">
+        <li><strong>1 × 45 perc</strong> élő mentorálás hetente</li>
+        <li>Online tanulói platform hozzáférés</li>
+        <li>24/7 AI visszajelzés a gyakorlásodra</li>
+        <li>Strukturált alaptananyag</li>
+        <li>Quizek, tesztek, szókártyák</li>
+        <li class="strike">Saját Notion diákoldal</li>
+        <li class="strike">Személyre szabott fejlődési terv</li>
+        <li class="strike">24 órás személyes válasz</li>
+      </ul>
+      <a href="mailto:baranyibettina@entropybreakers.com?subject=Basic%20csomag%20%2D%20szintfelm%C3%A9r%C5%91" class="pkg-btn">Szintfelmérőt kérek →</a>
+    </div>
+
+    <div class="pkg hot r d1">
+      <p class="pkg-lbl">Legtöbb választja</p>
+      <h3 class="pkg-n">Standard</h3>
+      <p class="pkg-sub">Itt kezd összeállni minden. A rendszer teljes ereje, személyre szabva.</p>
+      <div class="pkg-price">65 000 Ft</div>
+      <div class="pkg-price-unit">/ hónap</div>
+      <ul class="pkg-list">
+        <li><strong>2 × 45 perc</strong> élő mentorálás hetente</li>
+        <li>Minden a Basic csomagból</li>
+        <li>Saját Notion diákoldal</li>
+        <li>Személyre szabott fejlődési terv</li>
+        <li>A te szintedre szabott anyagok</li>
+        <li>Strukturált, heti ritmus</li>
+        <li class="strike">24 órás személyes válasz</li>
+        <li class="strike">Prioritás időpontfoglalás</li>
+      </ul>
+      <a href="mailto:baranyibettina@entropybreakers.com?subject=Standard%20csomag%20%2D%20szintfelm%C3%A9r%C5%91" class="pkg-btn">Szintfelmérőt kérek →</a>
+    </div>
+
+    <div class="pkg r d2">
+      <p class="pkg-lbl">Prémium</p>
+      <h3 class="pkg-n">Premium</h3>
+      <p class="pkg-sub">Gyorsabb, intenzívebb fejlődés. Ha céldátumod van, ez a tiéd.</p>
+      <div class="pkg-price">95 000 Ft</div>
+      <div class="pkg-price-unit">/ hónap</div>
+      <ul class="pkg-list">
+        <li><strong>3 × 45 perc</strong> élő mentorálás hetente</li>
+        <li>Minden a Standard csomagból</li>
+        <li><strong>24 órán belüli</strong> személyes válasz tőlem</li>
+        <li>Prioritás időpontfoglalás</li>
+        <li>Intenzív felkészítés konkrét céldátumra</li>
+        <li>Haladóbb szintű feladatok</li>
+        <li>Extra tesztek és gyakorlóanyagok</li>
+        <li>Teljes fókusz a te eredményedre</li>
+      </ul>
+      <a href="mailto:baranyibettina@entropybreakers.com?subject=Premium%20csomag%20%2D%20szintfelm%C3%A9r%C5%91" class="pkg-btn">Szintfelmérőt kérek →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-sec">
+  <p class="sec-eyebrow center r">A fordulópont</p>
+  <h2 class="r d1">Ha készen állsz, hogy valaki végre <em>tartsa a kezed</em></h2>
+  <p class="r d2">Eleget voltál egyedül a bizonytalansággal. Most itt vagyok — türelmesen, melletted, a saját tempódban. Nem kell tökéletesnek lenned.</p>
+  <p class="r d3"><em class="plain" style="color:#1a1410;font-style:italic">Csak el kell kezdened.</em></p>
+  <div class="final-portrait r d4">
+    <img src="images/bettina-baranyi-3.png" alt="Bettina Baranyi" loading="lazy">
+  </div>
+  <a href="mailto:baranyibettina@entropybreakers.com?subject=Szintfelm%C3%A9r%C5%91" class="btn-dark r d5">Kitöltöm a szintfelmérőt</a>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="faq-head r">
+    <p class="sec-eyebrow center">Amit a legtöbben kérdeznek</p>
+    <h2 class="sec-h2 center">Kérdések, <em>őszinte válaszok</em></h2>
+  </div>
+  <div class="faq-wrap r">
+    <div class="faq-item">
+      <div class="faq-q">Mi történik a szintfelmérő után?</div>
+      <div class="faq-a">Emailben kapsz személyre szabott ajánlást — a szinted és céljaid alapján a legmegfelelőbb csomagot javaslom. Minden ajánlást kézzel készítek el, nem automatizált. Ha úgy érzem, most nem tudok valódi eredményt hozni neked, ezt is őszintén megmondom.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Mi van, ha régen tanultam és sokat felejtettem?</div>
+      <div class="faq-a">Ez a leggyakoribb helyzet, amivel dolgozom. Az alapok megvannak, csak szétszóródtak. A rendszerem pontosan erre épül: visszarendezzük és aktívvá tesszük, amit már tudsz. Nem kell újrakezdened — csak újraépíteni.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Miért más ez, mint egy sima magántanár?</div>
+      <div class="faq-a">Mert nem csak órát kapsz, hanem komplett rendszert. Platform, AI visszajelzés, Notion diákoldal — minden egy helyen, az órákon kívül is aktív. A magánóra a te akaraterődre épül. Az én rendszerem a struktúrára.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Milyen gyorsan látok valódi eredményt?</div>
+      <div class="faq-a">Az első pár héten belül érezhető változás — főleg önbizalomban. A valódi áttörés általában 4-8 héten belül következik be, ha következetesen haladunk. De ez nem ígéret — a tempó a te elkötelezettségeden is múlik.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Mindenkivel dolgozol?</div>
+      <div class="faq-a">Nem — csak elkötelezett emberekkel, akik valóban készen állnak a rendszer követésére. A szintfelmérő után látom, hogy tudok-e valódi eredményt hozni. Ha nem, azt is megmondom. Nem akarok pénzt elvenni olyan munkáért, ami nem fog működni.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kapok visszajelzést az órákon kívül is?</div>
+      <div class="faq-a">Igen. Standard és Premium csomagban 24/7 AI visszajelzést kapsz — azonnal, amint beírsz egy mondatot vagy elkészítesz egy feladatot. Premium csomagban én 24 órán belül válaszolok személyesen is a kérdéseidre.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">És ha időközben rájövök, hogy nem nekem való?</div>
+      <div class="faq-a">Beszélünk. Őszintén. Nem erőltetem, hogy maradj. Az én rendszerem bizonyos embertípusoknak való — ha kiderül, hogy most nem a te időd, vagy más módszer illik hozzád jobban, ezt el fogjuk tudni együtt rendezni.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="ft-logo">Entropy Breakers</span>
+  <a class="ft-email" href="mailto:baranyibettina@entropybreakers.com">baranyibettina@entropybreakers.com</a>
+  <span class="ft-copy">© 2026 Entropy Breakers</span>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+// Nav background on scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('solid', scrollY > 60);
+}, { passive: true });
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+
+</body>
+</html>
