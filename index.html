@@ -907,15 +907,13 @@ footer{
 .scr-grid{
   max-width:640px;
   margin:0 auto;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
+  columns:2;
+  column-gap:12px;
 }
 .scr-grid .scr-card{
+  break-inside:avoid;
+  margin-bottom:12px;
   display:block;
-  flex:0 0 calc(50% - 6px);
-  max-width:calc(50% - 6px);
 }
 .scr-card{
   background:var(--bg2);
@@ -940,23 +938,19 @@ footer{
 @media (min-width:768px){
   .scr-grid{
     max-width:1000px;
-    gap:16px;
+    columns:3;
+    column-gap:16px;
   }
-  .scr-grid .scr-card{
-    flex:0 0 calc(33.333% - 11px);
-    max-width:calc(33.333% - 11px);
-  }
+  .scr-grid .scr-card{margin-bottom:16px}
   .scr-head-big h2{font-size:40px}
 }
 @media (min-width:1200px){
   .scr-grid{
     max-width:1160px;
-    gap:18px;
+    columns:4;
+    column-gap:18px;
   }
-  .scr-grid .scr-card{
-    flex:0 0 calc(25% - 14px);
-    max-width:calc(25% - 14px);
-  }
+  .scr-grid .scr-card{margin-bottom:18px}
   .scr-head-big h2{font-size:44px}
 }
 
