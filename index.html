@@ -907,20 +907,15 @@ footer{
 .scr-grid{
   max-width:640px;
   margin:0 auto;
-  columns:2;
-  column-gap:12px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
 }
 .scr-grid .scr-card{
-  break-inside:avoid;
-  margin-bottom:12px;
   display:block;
-}
-.scr-grid .scr-card-last{
-  break-inside:avoid;
-  margin:12px auto 0;
-  max-width:48%;
-  column-span:all;
-  display:block;
+  flex:0 0 calc(50% - 6px);
+  max-width:calc(50% - 6px);
 }
 .scr-card{
   background:var(--bg2);
@@ -945,19 +940,23 @@ footer{
 @media (min-width:768px){
   .scr-grid{
     max-width:1000px;
-    columns:3;
-    column-gap:16px;
+    gap:16px;
   }
-  .scr-grid .scr-card{margin-bottom:16px}
+  .scr-grid .scr-card{
+    flex:0 0 calc(33.333% - 11px);
+    max-width:calc(33.333% - 11px);
+  }
   .scr-head-big h2{font-size:40px}
 }
 @media (min-width:1200px){
   .scr-grid{
     max-width:1160px;
-    columns:4;
-    column-gap:18px;
+    gap:18px;
   }
-  .scr-grid .scr-card{margin-bottom:18px}
+  .scr-grid .scr-card{
+    flex:0 0 calc(25% - 14px);
+    max-width:calc(25% - 14px);
+  }
   .scr-head-big h2{font-size:44px}
 }
 
