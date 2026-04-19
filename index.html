@@ -908,23 +908,23 @@ footer{
   max-width:640px;
   margin:0 auto;
   columns:2;
-  column-gap:14px;
+  column-gap:12px;
 }
 .scr-grid .scr-card{
   break-inside:avoid;
-  margin-bottom:14px;
+  margin-bottom:12px;
   display:block;
 }
 .scr-grid .scr-card-last{
   break-inside:avoid;
-  margin:14px auto 0;
-  max-width:50%;
+  margin:12px auto 0;
+  max-width:48%;
   column-span:all;
   display:block;
 }
 .scr-card{
   background:var(--bg2);
-  padding:6px;
+  padding:5px;
   border:1px solid var(--border);
   border-radius:10px;
   overflow:hidden;
@@ -942,14 +942,23 @@ footer{
 }
 
 
-@media (min-width:960px){
-  .scr-head-big h2{font-size:44px}
-  .scr-grid{max-width:920px;column-gap:20px}
-  .scr-grid .scr-card{margin-bottom:20px}
+@media (min-width:768px){
+  .scr-grid{
+    max-width:1000px;
+    columns:3;
+    column-gap:16px;
+  }
+  .scr-grid .scr-card{margin-bottom:16px}
+  .scr-head-big h2{font-size:40px}
 }
-@media (min-width:1280px){
-  .scr-grid{max-width:1040px;column-gap:24px}
-  .scr-grid .scr-card{margin-bottom:24px}
+@media (min-width:1200px){
+  .scr-grid{
+    max-width:1160px;
+    columns:4;
+    column-gap:18px;
+  }
+  .scr-grid .scr-card{margin-bottom:18px}
+  .scr-head-big h2{font-size:44px}
 }
 
 @media (max-width:520px){
@@ -1693,6 +1702,14 @@ footer{
     <div class="faq-item">
       <div class="faq-q">És ha időközben rájövök, hogy nem nekem való?</div>
       <div class="faq-a">Beszélünk. Őszintén. Nem erőltetem, hogy maradj. Az én rendszerem bizonyos embertípusoknak való — ha kiderül, hogy most nem a te időd, vagy más módszer illik hozzád jobban, ezt el fogjuk tudni együtt rendezni.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Hogyan történik a fizetés?</div>
+      <div class="faq-a">Banki átutalással. A szintfelmérő utáni személyre szabott ajánló-emailben megkapod a csomag díjbekérőjét minden szükséges adattal (számlaszám, közlemény, összeg). Átutalás után számlát állítok ki a nevedre — magánszemélyként vagy vállalkozásként is kérhető. Nincs kötöttség előre: a szintfelmérő ingyenes, és csak akkor utalsz, ha biztos vagy benne.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Tudok részletfizetést kérni?</div>
+      <div class="faq-a">Igen, egyedi megállapodással igen. Az ajánló-emailben írd meg, és beszélünk róla — a cél, hogy ne a pénz legyen akadály, ha a program egyébként illik hozzád.</div>
     </div>
   </div>
 </section>
