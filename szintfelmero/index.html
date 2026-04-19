@@ -7,31 +7,31 @@
 <meta name="description" content="Ingyenes angol szintfelmérő. 5 perc alatt megtudod, hol tartasz — és melyik mentori csomag illik hozzád.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-<noscript><style>body::before{content:"A szintfelmérő futtatásához JavaScript szükséges.";display:block;padding:100px 20px;text-align:center;color:#f0ebe3;font-size:18px;}</style></noscript>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+<noscript><style>body::before{content:"A szintfelmérő futtatásához JavaScript szükséges.";display:block;padding:100px 20px;text-align:center;color:#fff;font-size:18px;}</style></noscript>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 :root{
-  --bg:#0a0806;
-  --bg2:#110d0a;
-  --bg3:#0d0b09;
-  --cream:#f0ebe3;
-  --cream2:#c8c1b8;
-  --dim:#5a5450;
-  --dimmer:#3a3530;
+  --bg:#000000;
+  --bg2:#0a0a0a;
+  --bg3:#141414;
+  --white:#ffffff;
+  --white-dim:#b8b8b8;
+  --dim:#666666;
+  --dimmer:#3a3a3a;
   --orange:#d4763b;
   --orange2:#bf6530;
   --orange-light:#e8884d;
-  --border:rgba(240,235,227,0.08);
-  --border2:rgba(240,235,227,0.14);
+  --border:rgba(255,255,255,0.08);
+  --border2:rgba(255,255,255,0.16);
   --red:#c95141;
   --green:#6e9467;
 }
 body{
   font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   background:var(--bg);
-  color:var(--cream);
+  color:var(--white);
   -webkit-font-smoothing:antialiased;
   line-height:1.55;
   min-height:100vh;
@@ -46,18 +46,18 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:900;
   height:64px;padding:0 28px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(10,8,6,.94);backdrop-filter:blur(20px);
+  background:rgba(0,0,0,.94);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
 }
 .logo{
-  font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;
-  color:var(--cream);text-decoration:none;
+  font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--white);text-decoration:none;
   display:flex;align-items:baseline;gap:5px;
 }
-.logo i{font-style:italic;color:var(--orange);font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;letter-spacing:.04em}
+.logo i{font-style:italic;color:var(--orange);font-weight:500;font-size:13px;letter-spacing:.04em}
 .nav-back{
   font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--cream2);text-decoration:none;
+  color:var(--white-dim);text-decoration:none;
   transition:color .25s;
 }
 .nav-back:hover{color:var(--orange)}
@@ -105,7 +105,7 @@ main{
 /* INTRO SCREEN */
 .intro-eyebrow{
   font-size:10px;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:22px;
+  color:var(--orange);margin-bottom:22px;font-weight:600;
   display:flex;align-items:center;gap:10px;
   justify-content:center;
 }
@@ -113,27 +113,28 @@ main{
   content:'';flex:0 0 auto;width:24px;height:1px;background:var(--orange);
 }
 .intro-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(44px,7vw,72px);
-  font-weight:500;line-height:1;
-  color:var(--cream);letter-spacing:-.02em;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(38px,6vw,60px);
+  font-weight:500;line-height:1.05;
+  color:var(--white);letter-spacing:-.025em;
   margin:0 0 28px;
   text-align:center;
 }
-.intro-title em{font-style:italic;color:var(--orange)}
+.intro-title em{font-style:italic;color:var(--orange);font-weight:500}
 .intro-lead{
   font-size:17px;font-weight:400;line-height:1.65;
-  color:var(--cream2);text-align:center;
+  color:var(--white-dim);text-align:center;
   max-width:520px;margin:0 auto 40px;
 }
-.intro-lead strong{color:var(--cream);font-weight:500}
+.intro-lead strong{color:var(--white);font-weight:500}
 .intro-meta{
   display:flex;justify-content:center;gap:28px;margin-bottom:48px;
   flex-wrap:wrap;
 }
 .intro-meta-item{
   font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--dim);display:flex;align-items:center;gap:8px;
+  color:var(--dim);font-weight:500;
+  display:flex;align-items:center;gap:8px;
 }
 .intro-meta-item::before{
   content:'';width:6px;height:6px;border-radius:50%;background:var(--orange);
@@ -161,7 +162,7 @@ main{
 .btn-secondary{
   background:transparent;
   border:1px solid var(--border2);
-  color:var(--cream2);
+  color:var(--white-dim);
   box-shadow:none;
   padding:18px 32px;
   max-width:320px;
@@ -180,33 +181,35 @@ main{
 }
 .btn-link{
   font-size:12px;font-weight:500;letter-spacing:.1em;
-  color:var(--cream2);text-decoration:none;
+  color:var(--white-dim);text-decoration:none;
   padding:12px 18px;cursor:pointer;
   transition:color .2s;background:transparent;border:none;
+  font-family:'DM Sans',sans-serif;
 }
 .btn-link:hover{color:var(--orange)}
 
 /* QUESTION SCREEN */
 .q-meta{
   font-size:10px;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:18px;font-weight:500;
+  color:var(--orange);margin-bottom:18px;font-weight:600;
 }
 .q-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(28px,4.4vw,42px);
-  font-weight:500;line-height:1.15;
-  color:var(--cream);letter-spacing:-.01em;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(26px,4vw,38px);
+  font-weight:500;line-height:1.2;
+  color:var(--white);letter-spacing:-.015em;
   margin:0 0 12px;
 }
-.q-title em{font-style:italic;color:var(--orange)}
+.q-title em{font-style:italic;color:var(--orange);font-weight:500}
 .q-hint{
-  font-size:14px;color:var(--cream2);
-  margin-bottom:36px;font-style:italic;
+  font-size:14px;color:var(--white-dim);
+  margin-bottom:36px;
+  font-weight:400;
 }
 .q-quote{
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;font-style:italic;font-weight:400;
-  color:var(--cream);line-height:1.5;
+  font-family:'DM Sans',sans-serif;
+  font-size:19px;font-style:italic;font-weight:400;
+  color:var(--white);line-height:1.5;
   padding:24px 28px;
   background:var(--bg2);
   border-left:3px solid var(--orange);
@@ -225,8 +228,9 @@ main{
   transition:all .25s;
   display:flex;align-items:flex-start;gap:14px;
   font-size:15.5px;line-height:1.5;
-  color:var(--cream);
+  color:var(--white);
   text-align:left;
+  font-family:'DM Sans',sans-serif;
 }
 .opt:hover{
   border-color:rgba(212,118,59,.4);
@@ -249,14 +253,14 @@ main{
   animation:fadeIn .2s;
 }
 .opt-text{flex:1}
-.opt-text em{font-style:italic;color:var(--cream2)}
+.opt-text em{font-style:italic;color:var(--white-dim)}
 
 /* TEXT INPUTS */
 .input-group{display:flex;flex-direction:column;gap:18px;margin-bottom:40px}
 .input-wrap{display:flex;flex-direction:column;gap:8px}
 .input-label{
   font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--cream2);font-weight:500;
+  color:var(--white-dim);font-weight:600;
 }
 input[type="text"],input[type="email"],textarea{
   width:100%;
@@ -264,7 +268,7 @@ input[type="text"],input[type="email"],textarea{
   border:1px solid var(--border2);
   border-radius:10px;
   padding:18px 22px;
-  color:var(--cream);
+  color:var(--white);
   font-family:'DM Sans',sans-serif;
   font-size:15.5px;
   transition:border-color .25s,background .25s;
@@ -298,9 +302,9 @@ textarea{min-height:120px;line-height:1.55}
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading-text{
-  font-family:'Cormorant Garamond',serif;
-  font-size:24px;font-style:italic;
-  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  font-size:22px;font-style:italic;font-weight:400;
+  color:var(--white);
 }
 
 /* RESULTS SCREEN */
@@ -314,18 +318,18 @@ textarea{min-height:120px;line-height:1.55}
   box-shadow:0 10px 30px rgba(212,118,59,.3);
 }
 .result-greeting{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,5vw,48px);
-  font-weight:500;line-height:1.1;letter-spacing:-.01em;
-  color:var(--cream);margin:0 0 28px;text-align:center;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(30px,4.8vw,44px);
+  font-weight:500;line-height:1.15;letter-spacing:-.02em;
+  color:var(--white);margin:0 0 28px;text-align:center;
 }
-.result-greeting em{font-style:italic;color:var(--orange)}
+.result-greeting em{font-style:italic;color:var(--orange);font-weight:500}
 .result-body{
-  font-size:16px;line-height:1.75;color:var(--cream2);
+  font-size:16px;line-height:1.75;color:var(--white-dim);
   margin:0 0 36px;
 }
 .result-body p{margin-bottom:18px}
-.result-body strong{color:var(--cream);font-weight:500}
+.result-body strong{color:var(--white);font-weight:500}
 
 .result-focus{
   background:var(--bg2);
@@ -341,7 +345,7 @@ textarea{min-height:120px;line-height:1.55}
 }
 .result-focus ul{list-style:none}
 .result-focus li{
-  font-size:15px;line-height:1.7;color:var(--cream);
+  font-size:15px;line-height:1.7;color:var(--white);
   padding:8px 0 8px 22px;position:relative;
 }
 .result-focus li::before{
@@ -349,39 +353,40 @@ textarea{min-height:120px;line-height:1.55}
   position:absolute;left:0;top:10px;
 }
 
-/* RECOMMENDED PACKAGE CARD */
+/* RECOMMENDED PACKAGE CARD — now white/orange/black only */
 .rec-pkg{
-  background:linear-gradient(165deg,#c96a2e 0%,#a8531f 100%);
+  background:var(--bg2);
+  border:1px solid var(--orange);
   border-radius:16px;
   padding:40px 36px;
   text-align:center;
   margin-bottom:28px;
   position:relative;overflow:hidden;
-  box-shadow:0 20px 50px rgba(212,118,59,.25);
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
 .rec-pkg::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 70% 30%,rgba(255,255,255,.12),transparent 60%);
+  background:radial-gradient(ellipse at 70% 30%,rgba(212,118,59,.12),transparent 60%);
   pointer-events:none;
 }
 .rec-pkg-label{
   font-size:10px;letter-spacing:.3em;text-transform:uppercase;
-  color:rgba(255,255,255,.85);font-weight:600;margin-bottom:8px;position:relative;
+  color:var(--orange);font-weight:600;margin-bottom:8px;position:relative;
 }
 .rec-pkg-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(44px,6vw,56px);font-weight:500;line-height:1;
-  color:#fff;letter-spacing:-.015em;margin-bottom:6px;position:relative;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(38px,5.4vw,50px);font-weight:500;line-height:1;
+  color:var(--white);letter-spacing:-.02em;margin-bottom:6px;position:relative;
 }
 .rec-pkg-price{
-  font-size:16px;color:#fff;opacity:.92;
+  font-size:16px;color:var(--white);opacity:.88;
   font-family:'DM Sans',sans-serif;position:relative;margin-bottom:10px;
 }
-.rec-pkg-price strong{font-weight:600;font-size:19px;opacity:1}
+.rec-pkg-price strong{font-weight:600;font-size:19px;opacity:1;color:var(--orange)}
 .rec-pkg-why{
-  font-size:14px;line-height:1.55;color:rgba(255,255,255,.88);
+  font-size:14px;line-height:1.55;color:var(--white-dim);
   margin-top:14px;padding-top:16px;
-  border-top:1px solid rgba(255,255,255,.22);position:relative;
+  border-top:1px solid var(--border2);position:relative;
 }
 
 /* NEXT STEPS BLOCK */
@@ -397,7 +402,7 @@ textarea{min-height:120px;line-height:1.55}
   color:var(--orange);font-weight:600;margin-bottom:10px;
 }
 .next-steps-body{
-  font-size:15px;line-height:1.65;color:var(--cream);
+  font-size:15px;line-height:1.65;color:var(--white);
 }
 .next-steps-body strong{color:var(--orange)}
 
@@ -407,7 +412,7 @@ footer{
   display:flex;justify-content:center;align-items:center;
   gap:12px;
   font-size:10px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--dimmer);
+  color:var(--dimmer);font-weight:500;
 }
 footer a{color:var(--dim);text-decoration:none;transition:color .25s}
 footer a:hover{color:var(--orange)}
@@ -436,31 +441,32 @@ footer a:hover{color:var(--orange)}
 @media (max-width:520px){
   main{padding:100px 20px 48px}
   .card{max-width:100%}
-  .intro-title{font-size:40px}
-  .q-title{font-size:26px}
+  .intro-title{font-size:36px}
+  .q-title{font-size:24px}
   .opt{padding:18px 20px;font-size:15px}
   .btn{padding:20px 28px;font-size:11px}
   .intro-meta{flex-direction:column;gap:12px;align-items:center}
-  .result-greeting{font-size:30px}
+  .result-greeting{font-size:28px}
   .rec-pkg{padding:32px 24px}
-  .rec-pkg-name{font-size:38px}
+  .rec-pkg-name{font-size:36px}
   .q-quote{font-size:17px;padding:20px 22px}
 }
 
 /* PAIN MIRROR SCREEN */
 .pain-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,5.5vw,56px);
-  font-weight:500;line-height:1.05;letter-spacing:-.015em;
-  color:var(--cream);margin:0 0 32px;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(32px,5vw,48px);
+  font-weight:500;line-height:1.1;letter-spacing:-.02em;
+  color:var(--white);margin:0 0 32px;
 }
-.pain-title em{font-style:italic;color:var(--orange)}
+.pain-title em{font-style:italic;color:var(--orange);font-weight:500}
 .pain-body{
-  font-size:17px;line-height:1.7;color:var(--cream);
+  font-size:17px;line-height:1.7;color:var(--white);
   margin:0 0 32px;
 }
 .pain-body p{margin-bottom:16px}
 .pain-body strong{color:var(--orange);font-weight:600}
+.pain-body em{font-style:italic;color:var(--white-dim)}
 .pain-stat{
   background:linear-gradient(135deg,rgba(212,118,59,.12),rgba(212,118,59,.04));
   border:1px solid rgba(212,118,59,.28);
@@ -468,21 +474,44 @@ footer a:hover{color:var(--orange)}
   border-radius:0 10px 10px 0;
   padding:24px 28px;
   margin:0 0 28px;
-  font-size:15px;line-height:1.65;color:var(--cream);
+  font-size:15px;line-height:1.65;color:var(--white);
 }
 .pain-stat strong{color:var(--orange);font-weight:600;font-size:17px}
 .pain-reframe{
-  font-family:'Cormorant Garamond',serif;
-  font-size:22px;font-style:italic;font-weight:400;
-  line-height:1.4;color:var(--cream2);
+  font-family:'DM Sans',sans-serif;
+  font-size:20px;font-style:italic;font-weight:400;
+  line-height:1.5;color:var(--white-dim);
   text-align:center;
   padding:28px 16px 0;
   border-top:1px solid var(--border);
 }
+
+/* MICRO PAIN MIRROR — shorter, one-line moments */
+.micro-pain{
+  padding:20px 0;
+  text-align:center;
+}
+.micro-pain-eyebrow{
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--orange);font-weight:600;margin-bottom:24px;
+}
+.micro-pain-body{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(22px,3.6vw,30px);
+  font-weight:400;font-style:italic;line-height:1.4;
+  color:var(--white);margin-bottom:20px;letter-spacing:-.01em;
+}
+.micro-pain-body strong{font-weight:600;color:var(--orange);font-style:normal}
+.micro-pain-note{
+  font-size:15px;line-height:1.65;color:var(--white-dim);
+  max-width:520px;margin:0 auto;
+}
+
 @media (max-width:520px){
-  .pain-title{font-size:32px}
+  .pain-title{font-size:28px}
   .pain-body{font-size:16px}
-  .pain-reframe{font-size:19px}
+  .pain-reframe{font-size:18px}
+  .micro-pain-body{font-size:20px}
 }
 
 /* RESULT PAIN LEAD */
@@ -498,33 +527,33 @@ footer a:hover{color:var(--orange)}
   color:var(--orange);font-weight:600;margin-bottom:14px;
 }
 .result-pain-lead-headline{
-  font-family:'Cormorant Garamond',serif;
+  font-family:'DM Sans',sans-serif;
   font-size:24px;font-weight:500;line-height:1.3;
-  color:var(--cream);margin-bottom:12px;letter-spacing:-.005em;
+  color:var(--white);margin-bottom:12px;letter-spacing:-.01em;
 }
-.result-pain-lead-headline em{font-style:italic;color:var(--orange)}
+.result-pain-lead-headline em{font-style:italic;color:var(--orange);font-weight:500}
 .result-pain-lead-body{
-  font-size:15.5px;line-height:1.65;color:var(--cream);
+  font-size:15.5px;line-height:1.65;color:var(--white);
 }
-.result-pain-lead-body strong{color:var(--cream);font-weight:500}
-.result-pain-lead-body em{font-style:italic;color:var(--cream2)}
+.result-pain-lead-body strong{color:var(--white);font-weight:500}
+.result-pain-lead-body em{font-style:italic;color:var(--white-dim)}
 
 /* STUDENT PROOF inside package card */
 .rec-pkg-proof{
   margin-top:20px;
   padding:16px 20px;
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.06);
   border-radius:10px;
   font-size:14px;line-height:1.55;
-  color:rgba(255,255,255,.95);
+  color:var(--white);
   text-align:left;
   position:relative;
-  border-left:3px solid rgba(255,255,255,.45);
+  border-left:3px solid var(--orange);
 }
 .rec-pkg-proof-name{
-  font-weight:600;color:#fff;
+  font-weight:600;color:var(--white);
   font-style:italic;
-  font-family:'Cormorant Garamond',serif;
+  font-family:'DM Sans',sans-serif;
   font-size:16px;
 }
 @media (max-width:520px){
@@ -532,7 +561,7 @@ footer a:hover{color:var(--orange)}
   .result-pain-lead-headline{font-size:21px}
 }
 
-/* THANK YOU SCREEN (no results shown — Bettina sends personal email) */
+/* THANK YOU SCREEN */
 .thankyou-check{
   display:flex;justify-content:center;align-items:center;
   margin:0 auto 36px;
@@ -545,23 +574,23 @@ footer a:hover{color:var(--orange)}
   100%{opacity:1;transform:scale(1)}
 }
 .thankyou-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(40px,6.5vw,64px);
-  font-weight:500;line-height:1;letter-spacing:-.02em;
-  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(36px,6vw,56px);
+  font-weight:500;line-height:1.05;letter-spacing:-.025em;
+  color:var(--white);
   text-align:center;
   margin:0 0 28px;
 }
-.thankyou-title em{font-style:italic;color:var(--orange)}
+.thankyou-title em{font-style:italic;color:var(--orange);font-weight:500}
 .thankyou-lead{
-  font-size:18px;line-height:1.55;color:var(--cream);
+  font-size:18px;line-height:1.55;color:var(--white);
   text-align:center;
   max-width:440px;margin:0 auto 48px;
 }
 .thankyou-lead em{
-  font-style:italic;color:var(--cream2);
-  font-family:'Cormorant Garamond',serif;
-  font-size:20px;
+  font-style:italic;color:var(--white-dim);
+  font-family:'DM Sans',sans-serif;
+  font-size:19px;
 }
 .thankyou-divider{
   height:1px;
@@ -590,21 +619,21 @@ footer a:hover{color:var(--orange)}
   font-size:22px;flex-shrink:0;line-height:1.2;
 }
 .thankyou-step-text{
-  flex:1;font-size:15px;line-height:1.55;color:var(--cream);
+  flex:1;font-size:15px;line-height:1.55;color:var(--white);
 }
 .thankyou-step-text strong{color:var(--orange);font-weight:600}
 .thankyou-footer-note{
   text-align:center;
-  font-family:'Cormorant Garamond',serif;
-  font-style:italic;font-size:19px;
-  color:var(--cream2);line-height:1.4;
+  font-family:'DM Sans',sans-serif;
+  font-style:italic;font-size:18px;font-weight:400;
+  color:var(--white-dim);line-height:1.45;
   max-width:400px;margin:0 auto;
 }
 @media (max-width:520px){
-  .thankyou-title{font-size:38px}
+  .thankyou-title{font-size:34px}
   .thankyou-lead{font-size:16px}
   .thankyou-step{padding:16px 18px}
-  .thankyou-footer-note{font-size:17px}
+  .thankyou-footer-note{font-size:16px}
 }
 </style>
 </head>
@@ -624,20 +653,20 @@ footer a:hover{color:var(--orange)}
 
     <!-- SCREEN 0: INTRO -->
     <section class="screen active" id="screen-intro">
-      <p class="intro-eyebrow">Szintfelmérő · 5 perc</p>
+      <p class="intro-eyebrow">Szintfelmérő · 5-7 perc</p>
       <h1 class="intro-title">Hol tartasz <em>valójában?</em></h1>
-      <p class="intro-lead">12 kérdés. <strong>Nincs rossz válasz.</strong> A végén megkapod a szinted, a neked szabott ajánlást, és 24 órán belül személyesen válaszolok neked.</p>
+      <p class="intro-lead">Néhány kérdés. <strong>Nincs rossz válasz.</strong> A végén megkapod a szinted, a neked szabott ajánlást, és 24 órán belül személyesen válaszolok neked.</p>
       <div class="intro-meta">
         <span class="intro-meta-item">Ingyenes</span>
-        <span class="intro-meta-item">5 perc</span>
+        <span class="intro-meta-item">5-7 perc</span>
         <span class="intro-meta-item">Személyes válasz</span>
       </div>
       <button class="btn" id="startBtn">Kezdjük →</button>
     </section>
 
-    <!-- SCREEN 1: Name + Email -->
+    <!-- Q1: Name + Email -->
     <section class="screen" id="screen-q1" data-q="1">
-      <p class="q-meta">1 / 12 · Rólad</p>
+      <p class="q-meta">1 · Rólad</p>
       <h2 class="q-title">Először is — <em>hogy hívnak?</em></h2>
       <p class="q-hint">A végén ide érkezik a személyre szabott eredményed.</p>
       <div class="input-group">
@@ -657,36 +686,18 @@ footer a:hover{color:var(--orange)}
       <p class="validation-hint" id="hint-q1">Kérlek, add meg mindkét mezőt</p>
     </section>
 
-    <!-- SCREEN 2: Goal -->
+    <!-- Q2: Goal -->
     <section class="screen" id="screen-q2" data-q="2">
-      <p class="q-meta">2 / 12 · Rólad</p>
+      <p class="q-meta">2 · Rólad</p>
       <h2 class="q-title">Mi a <em>legfontosabb célod</em> az angollal most?</h2>
       <p class="q-hint">Egy választ jelölj — a legerősebbet.</p>
       <div class="options" data-field="goal">
-        <div class="opt" data-value="business">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Üzleti vagy szakmai előrelépés (meeting, kolléga, interjú)</div>
-        </div>
-        <div class="opt" data-value="exam">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Nyelvvizsga felkészülés (B2 / középfok)</div>
-        </div>
-        <div class="opt" data-value="abroad">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Külföldi munka vagy költözés</div>
-        </div>
-        <div class="opt" data-value="daily">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Magabiztosabb mindennapi kommunikáció</div>
-        </div>
-        <div class="opt" data-value="personal">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Személyes fejlődés, magamnak</div>
-        </div>
-        <div class="opt" data-value="other" data-has-input="true">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Egyéb</div>
-        </div>
+        <div class="opt" data-value="business"><div class="opt-radio"></div><div class="opt-text">Üzleti vagy szakmai előrelépés (meeting, kolléga, interjú)</div></div>
+        <div class="opt" data-value="exam"><div class="opt-radio"></div><div class="opt-text">Nyelvvizsga felkészülés (B2 / középfok)</div></div>
+        <div class="opt" data-value="abroad"><div class="opt-radio"></div><div class="opt-text">Külföldi munka vagy költözés</div></div>
+        <div class="opt" data-value="daily"><div class="opt-radio"></div><div class="opt-text">Magabiztosabb mindennapi kommunikáció</div></div>
+        <div class="opt" data-value="personal"><div class="opt-radio"></div><div class="opt-text">Személyes fejlődés, magamnak</div></div>
+        <div class="opt" data-value="other" data-has-input="true"><div class="opt-radio"></div><div class="opt-text">Egyéb</div></div>
         <div class="opt-input-wrap" data-for="other">
           <input type="text" id="inp-goal-other" placeholder="Írd le a saját szavaiddal...">
         </div>
@@ -698,32 +709,17 @@ footer a:hover{color:var(--orange)}
       <p class="validation-hint" id="hint-q2">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 3: Blocker -->
+    <!-- Q3: Blocker -->
     <section class="screen" id="screen-q3" data-q="3">
-      <p class="q-meta">3 / 12 · Rólad</p>
+      <p class="q-meta">3 · Rólad</p>
       <h2 class="q-title">Mi az, <em>amin nem tudsz</em> átlendülni?</h2>
       <p class="q-hint">A te valódi akadályod. Légy őszinte.</p>
       <div class="options" data-field="blocker">
-        <div class="opt" data-value="speak">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Értem, amit mondanak, de megszólalni nem merek</div>
-        </div>
-        <div class="opt" data-value="live">
-          <div class="opt-radio"></div>
-          <div class="opt-text">A nyelvtant tudom, de élesben elakadok</div>
-        </div>
-        <div class="opt" data-value="forgot">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Régen tudtam, most szinte semmire nem emlékszem</div>
-        </div>
-        <div class="opt" data-value="time">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Nincs időm rendszeresen tanulni</div>
-        </div>
-        <div class="opt" data-value="failed">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Eddig minden módszer kudarcot vallott</div>
-        </div>
+        <div class="opt" data-value="speak"><div class="opt-radio"></div><div class="opt-text">Értem, amit mondanak, de megszólalni nem merek</div></div>
+        <div class="opt" data-value="live"><div class="opt-radio"></div><div class="opt-text">A nyelvtant tudom, de élesben elakadok</div></div>
+        <div class="opt" data-value="forgot"><div class="opt-radio"></div><div class="opt-text">Régen tudtam, most szinte semmire nem emlékszem</div></div>
+        <div class="opt" data-value="time"><div class="opt-radio"></div><div class="opt-text">Nincs időm rendszeresen tanulni</div></div>
+        <div class="opt" data-value="failed"><div class="opt-radio"></div><div class="opt-text">Eddig minden módszer kudarcot vallott</div></div>
       </div>
       <div class="btn-row">
         <button class="btn-link" data-prev>← Vissza</button>
@@ -732,7 +728,101 @@ footer a:hover{color:var(--orange)}
       <p class="validation-hint" id="hint-q3">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN: PAIN MIRROR (dynamic content based on Q3) -->
+    <!-- Q4: Last time you spoke English -->
+    <section class="screen" id="screen-q4" data-q="4">
+      <p class="q-meta">4 · Visszaemlékezés</p>
+      <h2 class="q-title">Mikor beszéltél <em>utoljára</em> angolul élesben?</h2>
+      <p class="q-hint">Ne a házi feladatra gondolj — valódi helyzetre, ahol muszáj volt.</p>
+      <div class="options" data-field="lastspoke">
+        <div class="opt" data-value="week"><div class="opt-radio"></div><div class="opt-text">Az elmúlt héten</div></div>
+        <div class="opt" data-value="month"><div class="opt-radio"></div><div class="opt-text">Az elmúlt hónapban</div></div>
+        <div class="opt" data-value="halfyear"><div class="opt-radio"></div><div class="opt-text">Fél éven belül</div></div>
+        <div class="opt" data-value="year"><div class="opt-radio"></div><div class="opt-text">Egy éve vagy régebben</div></div>
+        <div class="opt" data-value="never"><div class="opt-radio"></div><div class="opt-text">Nem emlékszem — olyan régen, hogy fáj rágondolni</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-link" data-prev>← Vissza</button>
+        <button class="btn" data-next>Tovább →</button>
+      </div>
+      <p class="validation-hint" id="hint-q4">Válassz egy lehetőséget</p>
+    </section>
+
+    <!-- Q5: How did it feel -->
+    <section class="screen" id="screen-q5" data-q="5">
+      <p class="q-meta">5 · Visszaemlékezés</p>
+      <h2 class="q-title">És <em>hogy érezted magad</em> utána?</h2>
+      <p class="q-hint">Nincs rossz válasz. Őszinte legyél magaddal.</p>
+      <div class="options" data-field="feltafter">
+        <div class="opt" data-value="proud"><div class="opt-radio"></div><div class="opt-text">Büszke voltam magamra — de utána sokáig nem történt semmi</div></div>
+        <div class="opt" data-value="okay"><div class="opt-radio"></div><div class="opt-text">Rendben volt, de éreztem, hogy kevés</div></div>
+        <div class="opt" data-value="anxious"><div class="opt-radio"></div><div class="opt-text">Szorongtam végig, megkönnyebbülés volt, amikor vége lett</div></div>
+        <div class="opt" data-value="ashamed"><div class="opt-radio"></div><div class="opt-text">Szégyelltem magam — hogy ennyi év után is ezen a szinten vagyok</div></div>
+        <div class="opt" data-value="avoided"><div class="opt-radio"></div><div class="opt-text">Kikerültem a helyzetet, mert féltem megszólalni</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-link" data-prev>← Vissza</button>
+        <button class="btn" data-next>Tovább →</button>
+      </div>
+      <p class="validation-hint" id="hint-q5">Válassz egy lehetőséget</p>
+    </section>
+
+    <!-- MICRO PAIN MIRROR #1 (after the "feltafter" moment) -->
+    <section class="screen" id="screen-micro1">
+      <div class="micro-pain">
+        <p class="micro-pain-eyebrow">Megállok itt egy pillanatra</p>
+        <p class="micro-pain-body" id="micro1Body">
+          <!-- filled dynamically -->
+        </p>
+        <p class="micro-pain-note" id="micro1Note">
+          <!-- filled dynamically -->
+        </p>
+      </div>
+      <div class="btn-row" style="margin-top:48px;">
+        <button class="btn-link" data-prev>← Vissza</button>
+        <button class="btn" id="micro1Continue">Folytassuk →</button>
+      </div>
+    </section>
+
+    <!-- Q6: How many times restarted -->
+    <section class="screen" id="screen-q6" data-q="6">
+      <p class="q-meta">6 · Minták</p>
+      <h2 class="q-title">Hányszor <em>kezdted már újra</em> a tanulást?</h2>
+      <p class="q-hint">Nyelvtanár, app, tankönyv, online kurzus — bármi, amit lelkesen elkezdtél, aztán abbahagytál.</p>
+      <div class="options" data-field="restarts">
+        <div class="opt" data-value="1"><div class="opt-radio"></div><div class="opt-text">Egyszer — most próbálnék igazán</div></div>
+        <div class="opt" data-value="2-3"><div class="opt-radio"></div><div class="opt-text">2-3 alkalommal</div></div>
+        <div class="opt" data-value="4-5"><div class="opt-radio"></div><div class="opt-text">4-5 alkalommal</div></div>
+        <div class="opt" data-value="many"><div class="opt-radio"></div><div class="opt-text">Sokszor — már nem is számolom</div></div>
+        <div class="opt" data-value="shame"><div class="opt-radio"></div><div class="opt-text">Elég sokszor ahhoz, hogy szégyelljem</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-link" data-prev>← Vissza</button>
+        <button class="btn" data-next>Tovább →</button>
+      </div>
+      <p class="validation-hint" id="hint-q6">Válassz egy lehetőséget</p>
+    </section>
+
+    <!-- Q7: Inner critic -->
+    <section class="screen" id="screen-q7" data-q="7">
+      <p class="q-meta">7 · Minták</p>
+      <h2 class="q-title">Mit mondasz <em>magadnak</em> ilyenkor?</h2>
+      <p class="q-hint">Amikor újra abbahagyod. Amikor elakadsz. A belső hang.</p>
+      <div class="options" data-field="innercritic">
+        <div class="opt" data-value="nottalented"><div class="opt-radio"></div><div class="opt-text">"Én nem vagyok nyelvtehetség"</div></div>
+        <div class="opt" data-value="tooold"><div class="opt-radio"></div><div class="opt-text">"Már túl öreg vagyok hozzá"</div></div>
+        <div class="opt" data-value="lazy"><div class="opt-radio"></div><div class="opt-text">"Csak lusta vagyok, nincs kitartásom"</div></div>
+        <div class="opt" data-value="stupid"><div class="opt-radio"></div><div class="opt-text">"Mindenki más már túl van rajta, csak én nem"</div></div>
+        <div class="opt" data-value="nevermine"><div class="opt-radio"></div><div class="opt-text">"Nekem ez soha nem fog menni"</div></div>
+        <div class="opt" data-value="neutral"><div class="opt-radio"></div><div class="opt-text">Nem vagyok magammal ilyen kemény</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-link" data-prev>← Vissza</button>
+        <button class="btn" data-next>Tovább →</button>
+      </div>
+      <p class="validation-hint" id="hint-q7">Válassz egy lehetőséget</p>
+    </section>
+
+    <!-- MICRO PAIN MIRROR #2 / main reframe (existing pain-mirror content, now triggered after innercritic) -->
     <section class="screen" id="screen-painmirror">
       <p class="intro-eyebrow" style="justify-content:flex-start">Értem</p>
       <h2 class="pain-title" id="painMirrorTitle">Te nem vagy egyedül ezzel.</h2>
@@ -751,11 +841,11 @@ footer a:hover{color:var(--orange)}
       </div>
     </section>
 
-    <!-- SCREEN 4: Grammar Q1 (A1-A2) -->
-    <section class="screen" id="screen-q4" data-q="4">
-      <p class="q-meta">4 / 12 · Szintfelmérés</p>
+    <!-- Q8: Grammar Q1 (A1-A2) -->
+    <section class="screen" id="screen-q8" data-q="8">
+      <p class="q-meta">8 · Szintfelmérés</p>
       <h2 class="q-title">Melyik mondat <em>helyes?</em></h2>
-      <div class="options" data-field="q4" data-correct="c">
+      <div class="options" data-field="g1" data-correct="c">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">She don't like coffee.</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">She doesn't likes coffee.</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">She doesn't like coffee.</div></div>
@@ -765,15 +855,15 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q4">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q8">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 5: Grammar Q2 (A2) -->
-    <section class="screen" id="screen-q5" data-q="5">
-      <p class="q-meta">5 / 12 · Szintfelmérés</p>
+    <!-- Q9: Grammar Q2 (A2) -->
+    <section class="screen" id="screen-q9" data-q="9">
+      <p class="q-meta">9 · Szintfelmérés</p>
       <h2 class="q-title">Egészítsd ki:</h2>
       <div class="q-quote">"I _____ to London last summer."</div>
-      <div class="options" data-field="q5" data-correct="b">
+      <div class="options" data-field="g2" data-correct="b">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">go</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">went</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">gone</div></div>
@@ -783,15 +873,15 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q5">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q9">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 6: Grammar Q3 (B1) -->
-    <section class="screen" id="screen-q6" data-q="6">
-      <p class="q-meta">6 / 12 · Szintfelmérés</p>
+    <!-- Q10: Grammar Q3 (B1) -->
+    <section class="screen" id="screen-q10" data-q="10">
+      <p class="q-meta">10 · Szintfelmérés</p>
       <h2 class="q-title">Mit jelent:</h2>
       <div class="q-quote">"I'm looking forward to meeting you"</div>
-      <div class="options" data-field="q6" data-correct="a">
+      <div class="options" data-field="g3" data-correct="a">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">Várom, hogy találkozzunk.</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">Visszatekintek a találkozásunkra.</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">Keresem, hogy találkozzak veled.</div></div>
@@ -801,14 +891,14 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q6">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q10">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 7: Grammar Q4 (B1-B2) -->
-    <section class="screen" id="screen-q7" data-q="7">
-      <p class="q-meta">7 / 12 · Szintfelmérés</p>
+    <!-- Q11: Grammar Q4 (B1-B2) -->
+    <section class="screen" id="screen-q11" data-q="11">
+      <p class="q-meta">11 · Szintfelmérés</p>
       <h2 class="q-title">Melyik hangzik <em>természetesen</em> egy üzleti emailben?</h2>
-      <div class="options" data-field="q7" data-correct="a">
+      <div class="options" data-field="g4" data-correct="a">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">Could you please send me the report by Friday?</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">You must send me the report until Friday.</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">Please sending me the report on Friday.</div></div>
@@ -818,15 +908,15 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q7">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q11">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 8: Grammar Q5 (B2) -->
-    <section class="screen" id="screen-q8" data-q="8">
-      <p class="q-meta">8 / 12 · Szintfelmérés</p>
+    <!-- Q12: Grammar Q5 (B2) -->
+    <section class="screen" id="screen-q12" data-q="12">
+      <p class="q-meta">12 · Szintfelmérés</p>
       <h2 class="q-title">Mit jelent:</h2>
       <div class="q-quote">"I should have called you earlier."</div>
-      <div class="options" data-field="q8" data-correct="b">
+      <div class="options" data-field="g5" data-correct="b">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">Fel fogok hívni korábban.</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">Fel kellett volna hívjalak korábban.</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">Hívtalak már korábban.</div></div>
@@ -836,15 +926,15 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q8">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q12">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 9: Grammar Q6 (B2 casual) -->
-    <section class="screen" id="screen-q9" data-q="9">
-      <p class="q-meta">9 / 12 · Szintfelmérés</p>
+    <!-- Q13: Grammar Q6 (B2 casual) -->
+    <section class="screen" id="screen-q13" data-q="13">
+      <p class="q-meta">13 · Szintfelmérés</p>
       <h2 class="q-title">Mi a <em>legtermészetesebb</em> válasz?</h2>
       <div class="q-quote">— "How's it going?"</div>
-      <div class="options" data-field="q9" data-correct="b">
+      <div class="options" data-field="g6" data-correct="b">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">I'm going to work, thank you.</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">Not too bad, you?</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">The going is good.</div></div>
@@ -854,15 +944,15 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q9">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q13">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 10: Grammar Q7 (B2-C1 reading) -->
-    <section class="screen" id="screen-q10" data-q="10">
-      <p class="q-meta">10 / 12 · Szintfelmérés</p>
+    <!-- Q14: Grammar Q7 (B2-C1 reading) -->
+    <section class="screen" id="screen-q14" data-q="14">
+      <p class="q-meta">14 · Szintfelmérés</p>
       <h2 class="q-title">Olvasd el és válaszd a <em>legjobb</em> összefoglalót:</h2>
       <div class="q-quote">"Despite the initial setbacks, the team managed to turn things around in the second half of the project and ultimately delivered ahead of schedule."</div>
-      <div class="options" data-field="q10" data-correct="b">
+      <div class="options" data-field="g7" data-correct="b">
         <div class="opt" data-value="a"><div class="opt-radio"></div><div class="opt-text">A csapat folyamatosan küzdött, és végül nem teljesítette a határidőt.</div></div>
         <div class="opt" data-value="b"><div class="opt-radio"></div><div class="opt-text">A csapat nehezen indult, de a végére időben és jól teljesített.</div></div>
         <div class="opt" data-value="c"><div class="opt-radio"></div><div class="opt-text">A projekt második fele sikertelen volt.</div></div>
@@ -872,76 +962,72 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q10">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q14">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 11: Time commitment -->
-    <section class="screen" id="screen-q11" data-q="11">
-      <p class="q-meta">11 / 12 · Elkötelezettség</p>
+    <!-- Q15: Time commitment -->
+    <section class="screen" id="screen-q15" data-q="15">
+      <p class="q-meta">15 · Elkötelezettség</p>
       <h2 class="q-title">Hetente <em>mennyi időt</em> tudsz szánni rá?</h2>
       <p class="q-hint">Az őszinte válasz itt sokat segít — rossz elköteleződés nincs.</p>
       <div class="options" data-field="time">
-        <div class="opt" data-value="low">
-          <div class="opt-radio"></div>
-          <div class="opt-text">1-2 óra <em>— alapok szinten tartása</em></div>
-        </div>
-        <div class="opt" data-value="mid">
-          <div class="opt-radio"></div>
-          <div class="opt-text">3-5 óra <em>— érezhető fejlődés</em></div>
-        </div>
-        <div class="opt" data-value="high">
-          <div class="opt-radio"></div>
-          <div class="opt-text">5+ óra <em>— gyors áttörés</em></div>
-        </div>
-        <div class="opt" data-value="unsure">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Nem vagyok biztos benne</div>
-        </div>
+        <div class="opt" data-value="low"><div class="opt-radio"></div><div class="opt-text">1-2 óra <em>— alapok szinten tartása</em></div></div>
+        <div class="opt" data-value="mid"><div class="opt-radio"></div><div class="opt-text">3-5 óra <em>— érezhető fejlődés</em></div></div>
+        <div class="opt" data-value="high"><div class="opt-radio"></div><div class="opt-text">5+ óra <em>— gyors áttörés</em></div></div>
+        <div class="opt" data-value="unsure"><div class="opt-radio"></div><div class="opt-text">Nem vagyok biztos benne</div></div>
       </div>
       <div class="btn-row">
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q11">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q15">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 12: Pain amplification — what do you lose -->
-    <section class="screen" id="screen-q12" data-q="12">
-      <p class="q-meta">12 / 13 · Elkötelezettség</p>
-      <h2 class="q-title">Ha <em>nem változik</em> semmi a következő 6 hónapban — mi a legnagyobb dolog, <em>amit elveszítesz?</em></h2>
+    <!-- Q16: Pain amplification - what do you lose -->
+    <section class="screen" id="screen-q16" data-q="16">
+      <p class="q-meta">16 · Elkötelezettség</p>
+      <h2 class="q-title">Ha <em>nem változik</em> semmi a következő 6 hónapban — mi a legnagyobb, <em>amit elveszítesz?</em></h2>
       <p class="q-hint">Ez nehéz kérdés. De a válasz segít nekem megérteni, mi forog kockán.</p>
       <div class="options" data-field="loss">
-        <div class="opt" data-value="opportunity">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Egy konkrét lehetőséget <em>— előléptetés, állás, külföld</em></div>
-        </div>
-        <div class="opt" data-value="confidence">
-          <div class="opt-radio"></div>
-          <div class="opt-text">A magabiztosságomat <em>— megint feladom</em></div>
-        </div>
-        <div class="opt" data-value="timemoney">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Időt és pénzt <em>— újabb sikertelen próbálkozások</em></div>
-        </div>
-        <div class="opt" data-value="dream">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Egy álmot, amiről lassan lemondok</div>
-        </div>
-        <div class="opt" data-value="fedup">
-          <div class="opt-radio"></div>
-          <div class="opt-text">Nem tudom — csak már nagyon elegem van</div>
+        <div class="opt" data-value="opportunity"><div class="opt-radio"></div><div class="opt-text">Egy konkrét lehetőséget <em>— előléptetés, állás, külföld</em></div></div>
+        <div class="opt" data-value="confidence"><div class="opt-radio"></div><div class="opt-text">A magabiztosságomat <em>— megint feladom</em></div></div>
+        <div class="opt" data-value="timemoney"><div class="opt-radio"></div><div class="opt-text">Időt és pénzt <em>— újabb sikertelen próbálkozások</em></div></div>
+        <div class="opt" data-value="dream"><div class="opt-radio"></div><div class="opt-text">Egy álmot, amiről lassan lemondok</div></div>
+        <div class="opt" data-value="fedup"><div class="opt-radio"></div><div class="opt-text">Nem tudom — csak már nagyon elegem van</div></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-link" data-prev>← Vissza</button>
+        <button class="btn" data-next>Tovább →</button>
+      </div>
+      <p class="validation-hint" id="hint-q16">Válassz egy lehetőséget</p>
+    </section>
+
+    <!-- Q17: GAIN VISION - what would you gain -->
+    <section class="screen" id="screen-q17" data-q="17">
+      <p class="q-meta">17 · Jövőkép</p>
+      <h2 class="q-title">És ha 6 hónap múlva <em>folyékonyan beszélnél</em> — mit <em>nyernél?</em></h2>
+      <p class="q-hint">Képzeld el. Mi az első dolog, ami megváltozna az életedben?</p>
+      <div class="options" data-field="gain">
+        <div class="opt" data-value="career"><div class="opt-radio"></div><div class="opt-text">Előrelépést a karrieremben <em>— amit eddig az angol blokkolt</em></div></div>
+        <div class="opt" data-value="pride"><div class="opt-radio"></div><div class="opt-text">Büszkeséget magamra <em>— végre megcsináltam</em></div></div>
+        <div class="opt" data-value="freedom"><div class="opt-radio"></div><div class="opt-text">Szabadságot <em>— bárhol, bárkivel tudok kommunikálni</em></div></div>
+        <div class="opt" data-value="connection"><div class="opt-radio"></div><div class="opt-text">Valódi kapcsolatokat <em>— külföldi emberekkel, eszmékkel</em></div></div>
+        <div class="opt" data-value="identity"><div class="opt-radio"></div><div class="opt-text">Egy új énképet <em>— olyan emberré válok, aki meg tudja csinálni</em></div></div>
+        <div class="opt" data-value="other" data-has-input="true"><div class="opt-radio"></div><div class="opt-text">Egyéb — saját szavaimmal mondanám el</div></div>
+        <div class="opt-input-wrap" data-for="other">
+          <input type="text" id="inp-gain-other" placeholder="Írd le, mit nyernél...">
         </div>
       </div>
       <div class="btn-row">
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" data-next>Tovább →</button>
       </div>
-      <p class="validation-hint" id="hint-q12">Válassz egy lehetőséget</p>
+      <p class="validation-hint" id="hint-q17">Válassz egy lehetőséget</p>
     </section>
 
-    <!-- SCREEN 13: Why now (free text) -->
-    <section class="screen" id="screen-q13" data-q="13">
-      <p class="q-meta">13 / 13 · Elkötelezettség</p>
+    <!-- Q18: Why now (free text) -->
+    <section class="screen" id="screen-q18" data-q="18">
+      <p class="q-meta">18 · Elkötelezettség</p>
       <h2 class="q-title">És végül: <em>miért most?</em></h2>
       <p class="q-hint">Mi történik, ha a következő 6 hónapban nem javul az angolod? 1-2 mondat elég.</p>
       <div class="input-group">
@@ -951,7 +1037,7 @@ footer a:hover{color:var(--orange)}
         <button class="btn-link" data-prev>← Vissza</button>
         <button class="btn" id="submitBtn">Elküldöm →</button>
       </div>
-      <p class="validation-hint" id="hint-q13">Néhány szó segít, hogy jobban megértselek</p>
+      <p class="validation-hint" id="hint-q18">Néhány szó segít, hogy jobban megértselek</p>
     </section>
 
     <!-- SCREEN: SUBMITTING -->
@@ -962,7 +1048,7 @@ footer a:hover{color:var(--orange)}
       </div>
     </section>
 
-        <!-- SCREEN: THANK YOU (no results shown — they receive by email from Bettina personally) -->
+    <!-- SCREEN: THANK YOU -->
     <section class="screen" id="screen-results">
       <div class="thankyou-check">
         <svg viewBox="0 0 64 64" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
@@ -970,16 +1056,12 @@ footer a:hover{color:var(--orange)}
           <path d="M 18 33 L 28 43 L 46 23" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      
       <h2 class="thankyou-title">Megkaptam, <em id="thankyouName">Anna</em>.</h2>
-      
       <p class="thankyou-lead">
         Köszönöm, hogy végigjöttél velem.<br>
         A válaszaid most az <em>asztalomon vannak.</em>
       </p>
-      
       <div class="thankyou-divider"></div>
-      
       <div class="thankyou-block">
         <p class="thankyou-block-label">Mi következik</p>
         <div class="thankyou-step">
@@ -995,9 +1077,7 @@ footer a:hover{color:var(--orange)}
           </div>
         </div>
       </div>
-      
       <div class="thankyou-divider"></div>
-      
       <p class="thankyou-footer-note">
         Addig ne csinálj semmit. Olvasgass, élj — én dolgozom a válaszodon.
       </p>
@@ -1027,27 +1107,38 @@ footer a:hover{color:var(--orange)}
 // CONFIG
 // =======================================================
 const WEBHOOK_URL = 'https://hook.eu1.make.com/gbjcox7j9ofvpmpsiu04qfjc6apyqnkv';
-const TOTAL_QUESTIONS = 13;
+const TOTAL_QUESTIONS = 18;
 
 // =======================================================
 // STATE
 // =======================================================
 const state = {
-  current: 0, // 0 = intro, 1-12 = questions, 13 = submitting, 14 = results, 15 = error
+  current: 0,
   answers: {
-    name: '',
-    email: '',
-    goal: '',
-    goalOther: '',
+    name: '', email: '',
+    goal: '', goalOther: '',
     blocker: '',
-    q4: '', q5: '', q6: '', q7: '', q8: '', q9: '', q10: '',
+    lastspoke: '',
+    feltafter: '',
+    restarts: '',
+    innercritic: '',
+    g1:'', g2:'', g3:'', g4:'', g5:'', g6:'', g7:'',
     time: '',
     loss: '',
+    gain: '', gainOther: '',
     whynow: '',
   },
   correctAnswers: {
-    q4: 'c', q5: 'b', q6: 'a', q7: 'a', q8: 'b', q9: 'b', q10: 'b'
+    g1: 'c', g2: 'b', g3: 'a', g4: 'a', g5: 'b', g6: 'b', g7: 'b'
   },
+};
+
+// Question -> answer field map (for validation + navigation)
+const Q_FIELD = {
+  2:'goal', 3:'blocker', 4:'lastspoke', 5:'feltafter',
+  6:'restarts', 7:'innercritic',
+  8:'g1', 9:'g2', 10:'g3', 11:'g4', 12:'g5', 13:'g6', 14:'g7',
+  15:'time', 16:'loss', 17:'gain'
 };
 
 // =======================================================
@@ -1064,9 +1155,7 @@ function showScreen(screenId) {
   const target = document.getElementById(screenId);
   if (target) {
     target.classList.add('active');
-    // Scroll to top smoothly
     window.scrollTo({top: 0, behavior: 'smooth'});
-    // Focus first input if any
     setTimeout(() => {
       const firstInput = target.querySelector('input[type="text"], input[type="email"], textarea');
       if (firstInput && !firstInput.value) firstInput.focus({preventScroll: true});
@@ -1084,17 +1173,54 @@ function goToQuestion(n) {
   if (n === 0) {
     showScreen('screen-intro');
     updateProgress(0);
-  } else if (n >= 1 && n <= 13) {
+  } else if (n >= 1 && n <= 18) {
     showScreen(`screen-q${n}`);
     updateProgress(n);
   }
 }
 
+// =======================================================
+// MICRO PAIN MIRROR (after Q5 - feltafter)
+// =======================================================
+const MICRO1_CONTENT = {
+  proud: {
+    body: 'Ismerős ez: <strong>büszke vagy, aztán elcsendesedik minden.</strong>',
+    note: 'Az energia, ami megszólalt benned — az valódi. Csak még nincs rendszered, ami életben tartja.',
+  },
+  okay: {
+    body: '"Rendben volt, de éreztem, hogy <strong>kevés.</strong>"',
+    note: 'Ez a felismerés értékes. A "rendben" és a "valódi magabiztosság" között van egy konkrét távolság — és az behatárolható.',
+  },
+  anxious: {
+    body: 'A szorongás <strong>nem hiányosságról szól.</strong> Felkészültségről.',
+    note: 'Amikor nincs biztos alapod a beszédhez, a tested készenlétbe áll. Ez nem jellemhiba — ez agy-védekezés. És megoldható.',
+  },
+  ashamed: {
+    body: 'A szégyen nehéz. <strong>Fontos, hogy kimondtad.</strong>',
+    note: 'A szégyen azt jelzi: úgy érzed, nem az vagy, akinek lenned kellene. De az nem szégyen, ha még nem tartasz ott, ahol akarsz. Csak állapot — nem ítélet.',
+  },
+  avoided: {
+    body: '<strong>Kikerülted a helyzetet.</strong> Ez nem gyávaság — ez védekezés.',
+    note: 'Amikor valami ilyen nagy árat kér (szégyen, szorongás), természetes, hogy elkerülöd. A kérdés most az: mit veszítesz el, ha ezt folytatod?',
+  },
+};
+
+function showMicroPain1() {
+  const content = MICRO1_CONTENT[state.answers.feltafter] || MICRO1_CONTENT.okay;
+  document.getElementById('micro1Body').innerHTML = content.body;
+  document.getElementById('micro1Note').innerHTML = content.note;
+  showScreen('screen-micro1');
+  updateProgress(5);
+  state.current = 'micro1';
+}
+
+// =======================================================
+// MAIN PAIN MIRROR (after Q7 - innercritic)
+// =======================================================
 function showPainMirror() {
   renderPainMirror();
   showScreen('screen-painmirror');
-  // Progress stays at Q3 level (the mirror is between questions)
-  updateProgress(3);
+  updateProgress(7);
   state.current = 'painmirror';
 }
 
@@ -1107,7 +1233,6 @@ function renderPainMirror() {
   document.getElementById('painMirrorReframe').innerHTML = content.reframe;
 }
 
-// Pain mirror content per blocker type
 const PAIN_MIRROR_CONTENT = {
   speak: {
     title: 'Értelek. És nem vagy <em>egyedül</em> ezzel.',
@@ -1119,7 +1244,7 @@ const PAIN_MIRROR_CONTENT = {
     title: 'Ez a klasszikus <em>"magyar fal"</em>.',
     body: '<p>A nyelvtant tudod — és ez több, mint gondolod. A probléma az, hogy a tudás még <strong>passzív:</strong> felismered, de használni nem tudod automatikusan.</p><p>Ez nem hiba. Ez fejlődési fázis.</p>',
     stat: 'A tanulóim <strong>80%-a</strong> pontosan itt akad el először. És pontosan ez az, amit a rendszeremben a leggyorsabban át lehet törni — nem új anyaggal, hanem célzott gyakorlással.',
-    reframe: '"A tudás nem akkor éledt meg, amikor megtanultad. Akkor éled meg, amikor használni kezded."',
+    reframe: '"A tudás nem akkor éled meg, amikor megtanultad. Akkor éled meg, amikor használni kezded."',
   },
   forgot: {
     title: 'A tudásod nincs <em>elveszve</em>.',
@@ -1135,13 +1260,13 @@ const PAIN_MIRROR_CONTENT = {
   },
   failed: {
     title: 'Köszönöm az <em>őszinteséged.</em>',
-    body: '<p>Ez nehéz dolog bevallani. De pont ezért fontos, hogy itt, a felmérő elején, kimondjuk:</p><p><strong>Nem veled van a baj.</strong> A módszerek, amik eddig nem működtek neked, lehet, hogy másoknak jók — de neked nem azok kellettek.</p>',
+    body: '<p>Ez nehéz dolog bevallani. De pont ezért fontos, hogy itt, a felmérő közepén, kimondjuk:</p><p><strong>Nem veled van a baj.</strong> A módszerek, amik eddig nem működtek neked, lehet, hogy másoknak jók — de neked nem azok kellettek.</p>',
     stat: 'Az eredmény végén <strong>nem fogok neked csomagot ajánlani</strong>. Először beszélgetni szeretnék veled — meghallgatni, mi nem működött. Utána tudom megmondani, hogy én mást tudok-e csinálni, vagy esetleg valaki más illik jobban hozzád.',
     reframe: '"Ami 10 embernek bevált, neked nem kell, hogy beváljon. Ez nem kudarc. Ez csak adat."',
   },
   default: {
     title: 'Értelek.',
-    body: '<p>A válaszod alapján pontosan tudom, hol tartasz. Folytassuk a felmérést, hogy a végén a lehető legjobb ajánlást tudjam adni.</p>',
+    body: '<p>A válaszaid alapján pontosan tudom, hol tartasz. Folytassuk a felmérést, hogy a végén a lehető legjobb ajánlást tudjam adni.</p>',
     stat: '',
     reframe: '',
   },
@@ -1155,31 +1280,22 @@ document.getElementById('startBtn').addEventListener('click', () => {
 });
 
 // =======================================================
-// OPTION SELECTION (radio-like behavior)
+// OPTION SELECTION
 // =======================================================
 document.querySelectorAll('.options').forEach(optionsGroup => {
   optionsGroup.addEventListener('click', (e) => {
     const opt = e.target.closest('.opt');
     if (!opt) return;
-    
-    // Deselect siblings
     optionsGroup.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
-    // Select this one
     opt.classList.add('selected');
-    
-    // Store value
     const field = optionsGroup.dataset.field;
     const value = opt.dataset.value;
     state.answers[field] = value;
-    
-    // Hide validation hint on this screen
     const screen = opt.closest('.screen');
     if (screen) {
       const hint = screen.querySelector('.validation-hint');
       if (hint) hint.classList.remove('show');
     }
-    
-    // Handle "Other" input toggle
     if (opt.dataset.hasInput === 'true') {
       const wrap = optionsGroup.querySelector(`.opt-input-wrap[data-for="${value}"]`);
       if (wrap) {
@@ -1187,21 +1303,23 @@ document.querySelectorAll('.options').forEach(optionsGroup => {
         setTimeout(() => wrap.querySelector('input')?.focus(), 300);
       }
     } else {
-      // Hide all "other" input wraps in this group
       optionsGroup.querySelectorAll('.opt-input-wrap').forEach(w => w.classList.remove('show'));
     }
   });
 });
 
 // =======================================================
-// "OTHER" TEXT INPUT
+// "OTHER" TEXT INPUTS
 // =======================================================
 document.getElementById('inp-goal-other').addEventListener('input', (e) => {
   state.answers.goalOther = e.target.value.trim();
 });
+document.getElementById('inp-gain-other').addEventListener('input', (e) => {
+  state.answers.gainOther = e.target.value.trim();
+});
 
 // =======================================================
-// TEXT INPUTS (name, email, whynow)
+// TEXT INPUTS
 // =======================================================
 document.getElementById('inp-name').addEventListener('input', (e) => {
   state.answers.name = e.target.value.trim();
@@ -1218,7 +1336,6 @@ document.getElementById('inp-whynow').addEventListener('input', (e) => {
 // =======================================================
 function validateQuestion(qNum) {
   const hint = document.getElementById(`hint-q${qNum}`);
-  
   if (qNum === 1) {
     const validName = state.answers.name.length >= 2;
     const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.answers.email);
@@ -1229,21 +1346,21 @@ function validateQuestion(qNum) {
       }
       return false;
     }
-  } else if (qNum >= 2 && qNum <= 12) {
-    const fieldMap = {2:'goal',3:'blocker',4:'q4',5:'q5',6:'q6',7:'q7',8:'q8',9:'q9',10:'q10',11:'time',12:'loss'};
-    const field = fieldMap[qNum];
+  } else if (qNum >= 2 && qNum <= 17) {
+    const field = Q_FIELD[qNum];
     if (!state.answers[field]) {
       if (hint) hint.classList.add('show');
       return false;
     }
     if (qNum === 2 && state.answers.goal === 'other' && !state.answers.goalOther) {
-      if (hint) {
-        hint.textContent = 'Kérlek, írd le röviden a saját célod';
-        hint.classList.add('show');
-      }
+      if (hint) { hint.textContent = 'Kérlek, írd le röviden a saját célod'; hint.classList.add('show'); }
       return false;
     }
-  } else if (qNum === 13) {
+    if (qNum === 17 && state.answers.gain === 'other' && !state.answers.gainOther) {
+      if (hint) { hint.textContent = 'Kérlek, írd le röviden, mit nyernél'; hint.classList.add('show'); }
+      return false;
+    }
+  } else if (qNum === 18) {
     if (state.answers.whynow.length < 3) {
       if (hint) hint.classList.add('show');
       return false;
@@ -1253,40 +1370,55 @@ function validateQuestion(qNum) {
 }
 
 // =======================================================
-// NEXT / PREV BUTTONS
+// NEXT / PREV — with mirror interrupts
 // =======================================================
 document.querySelectorAll('[data-next]').forEach(btn => {
   btn.addEventListener('click', () => {
-    if (validateQuestion(state.current)) {
-      // Special case: after Q3, show pain-mirror before Q4
-      if (state.current === 3) {
+    const cur = state.current;
+    if (typeof cur === 'number' && validateQuestion(cur)) {
+      // After Q5 (feltafter) → micro pain mirror #1
+      if (cur === 5) {
+        showMicroPain1();
+      }
+      // After Q7 (innercritic) → main pain mirror
+      else if (cur === 7) {
         showPainMirror();
-      } else {
-        goToQuestion(state.current + 1);
+      }
+      else {
+        goToQuestion(cur + 1);
       }
     }
   });
 });
 
-// Pain mirror's "Folytassuk" button → go to Q4
+// Micro pain 1 continue → Q6
+document.getElementById('micro1Continue').addEventListener('click', () => {
+  goToQuestion(6);
+});
+
+// Main pain mirror continue → Q8
 document.getElementById('painMirrorContinue').addEventListener('click', () => {
-  goToQuestion(4);
+  goToQuestion(8);
 });
 
 document.querySelectorAll('[data-prev]').forEach(btn => {
   btn.addEventListener('click', () => {
-    // Special cases around pain-mirror
-    if (state.current === 'painmirror') {
-      goToQuestion(3);
-    } else if (state.current === 4) {
+    const cur = state.current;
+    if (cur === 'micro1') {
+      goToQuestion(5);
+    } else if (cur === 'painmirror') {
+      goToQuestion(7);
+    } else if (cur === 6) {
+      showMicroPain1();
+    } else if (cur === 8) {
       showPainMirror();
-    } else {
-      goToQuestion(state.current - 1);
+    } else if (typeof cur === 'number') {
+      goToQuestion(cur - 1);
     }
   });
 });
 
-// Enter key advances on text inputs
+// Enter key on text inputs
 ['inp-name', 'inp-email'].forEach(id => {
   document.getElementById(id).addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
@@ -1302,10 +1434,9 @@ document.querySelectorAll('[data-prev]').forEach(btn => {
 // =======================================================
 function computeLevel() {
   let correct = 0;
-  for (const q of ['q4','q5','q6','q7','q8','q9','q10']) {
+  for (const q of ['g1','g2','g3','g4','g5','g6','g7']) {
     if (state.answers[q] === state.correctAnswers[q]) correct++;
   }
-  
   let level, levelLabel;
   if (correct <= 2) {
     level = 'ujrakezdo';
@@ -1323,38 +1454,27 @@ function computeLevel() {
 function recommendPackage() {
   const { level } = computeLevel();
   const { goal, time, blocker } = state.answers;
-  
   let pkg = 'standard';
   let reason = '';
-  
-  // Special case: "minden módszer kudarc volt" → need personal attention
+
   if (blocker === 'failed') {
     pkg = 'personal';
     reason = 'A te történeted alapján először egy személyes beszélgetést javaslok, mielőtt bármilyen csomagot ajánlanék. Nem akarok megismételni olyat, ami nem működött.';
     return { pkg, reason };
   }
-  
-  // Business/exam goal + medium-high time → Premium
   if ((goal === 'business' || goal === 'exam' || goal === 'abroad') && (time === 'mid' || time === 'high')) {
     pkg = 'premium';
     reason = 'Konkrét célod és megvan a heti időd hozzá — intenzív ritmus kell a valódi áttöréshez. A Premium csomag 3 óra heti mentorálással ezt támogatja.';
-  }
-  // High time commitment + advanced level → Premium
-  else if (level === 'halado' && time === 'high') {
+  } else if (level === 'halado' && time === 'high') {
     pkg = 'premium';
     reason = 'Már magas szinten vagy, és sok időt tudsz szánni a fejlődésre. Nálad a precizitás és a finomhangolás hozza a következő szintet — ehhez heti 3 alkalom az ideális.';
-  }
-  // Beginner + low time → Basic
-  else if (level === 'ujrakezdo' && (time === 'low' || time === 'unsure')) {
+  } else if (level === 'ujrakezdo' && (time === 'low' || time === 'unsure')) {
     pkg = 'basic';
     reason = 'Építkezős időszakban vagy, és kevés időd van. Heti 1 élő óra + a platform és az AI visszajelzés pont elég, hogy érezhetően haladj — tempó nélküli nyomás nélkül.';
-  }
-  // Default → Standard
-  else {
+  } else {
     pkg = 'standard';
     reason = 'A legtöbb tanulóm itt kezd: heti 2 óra élő mentorálás + személyre szabott Notion oldal + AI visszajelzés. Ez a legjobb egyensúly tempó és fenntarthatóság között.';
   }
-  
   return { pkg, reason };
 }
 
@@ -1371,20 +1491,11 @@ function getPackageDetails(pkg) {
 function getPersonalizedFocus() {
   const { level } = computeLevel();
   const { blocker, goal } = state.answers;
-  
-  // Build 3 focus points based on level + blocker + goal
   const focuses = [];
-  
-  // Level-based first bullet
-  if (level === 'ujrakezdo') {
-    focuses.push('Az alapok újrarendezése és aktivizálása');
-  } else if (level === 'kozephalado') {
-    focuses.push('Passzív tudás aktivizálása — amit már értesz, használni is tudd');
-  } else {
-    focuses.push('Precizitás, árnyalatok és folyékony spontán beszéd');
-  }
-  
-  // Blocker-based second bullet
+  if (level === 'ujrakezdo') focuses.push('Az alapok újrarendezése és aktivizálása');
+  else if (level === 'kozephalado') focuses.push('Passzív tudás aktivizálása — amit már értesz, használni is tudd');
+  else focuses.push('Precizitás, árnyalatok és folyékony spontán beszéd');
+
   const blockerFocus = {
     speak: 'Ítéletmentes beszédgyakorlás — bátorság nélkül is megjön a magabiztosság',
     live: 'Valós helyzetek szimulálása — hogy élesben is működjön, ne csak gyakorláskor',
@@ -1393,8 +1504,7 @@ function getPersonalizedFocus() {
     failed: 'Először megértem, mi nem működött eddig — utána építünk újat',
   };
   focuses.push(blockerFocus[blocker] || 'Személyre szabott módszer a te akadályodra');
-  
-  // Goal-based third bullet
+
   const goalFocus = {
     business: 'Üzleti kontextus — meetingek, email, prezentáció, interjú',
     exam: 'Nyelvvizsga-célú felkészítés — strukturáltan a B2 követelményekhez',
@@ -1404,61 +1514,24 @@ function getPersonalizedFocus() {
     other: 'Pontosan arra szabva, amit te szeretnél elérni',
   };
   focuses.push(goalFocus[goal] || 'A te konkrét célodra szabott tananyag');
-  
   return focuses;
 }
 
-function getGreetingMessage() {
-  const { level } = computeLevel();
-  const { blocker } = state.answers;
-  
-  // "Good news" framing — pain is already named in the lead above, now we give hope + specifics
-  const messages = {
-    speak: {
-      ujrakezdo: 'A megértés már ott van benned — ez <strong>80%-a a dolognak</strong>. A beszéd a <em>gyakorlat + biztonság</em> kérdése, és pontosan ezt nyújtom: egy olyan környezetet, ahol bátran hibázhatsz, és minden hiba visz előre.',
-      kozephalado: '<strong>Közelebb vagy a beszédhez, mint érzed.</strong> A tudásod megvan, csak a biztonságérzet hiányzik. Pár hét célzott gyakorlás biztonságos környezetben — és átlendülsz a falon, amin 3 éve ott állsz.',
-      halado: 'Magas szinten értesz mindent. A spontán beszéd már csak <em>gyakorlat és finomhangolás</em> — nem tudás. A rendszeremben pontosan erre van hely.',
-    },
-    live: {
-      ujrakezdo: 'A nyelvtani alapok megvannak — ez nagy dolog. Ami hiányzik: az <strong>élő gyakorlás, valós helyzetekben</strong>. Pontosan ezt építjük fel együtt, hétről hétre.',
-      kozephalado: 'A tudásod <strong>nem hiányos — csak passzív.</strong> Nem új anyag kell, hanem aktivizálás. A rendszerem erre épül: megtanult nyelvtani szerkezeteket valós helyzetekre váltani, ahol automatikusan működnek.',
-      halado: 'Magas szinten értesz. Amit még finomítani kell: az <em>árnyalatok és a spontán folyékonyság</em>. Ez a legfinomabb réteg — és a legjobban megtérülő munka.',
-    },
-    forgot: {
-      ujrakezdo: 'A tudásod <strong>nincs elveszve</strong> — csak szétszóródott. Nem kell elölről kezdened. Visszarendezzük, és meg fogsz lepődni, mennyi van még benned.',
-      kozephalado: '<strong>Több van benned, mint hiszed.</strong> A passzív tudásod ott lapul — csak nem fér hozzá tudatosan. Strukturált módszerrel pár hét alatt újra aktívvá tesszük.',
-      halado: '<strong>Meglepően sokat tudsz még</strong> — ezt most bebizonyítottad. Innen már csak fel kell élesztenünk az aktív használatot. Sokkal közelebb vagy, mint hitted.',
-    },
-    time: {
-      ujrakezdo: 'Kevés idő ≠ lehetetlen. A rendszerem heti <strong>1-2 óra + napi 10-15 perc célzott gyakorlás</strong> alapon épül. A platform és az AI a köztes időben dolgozik érted — nem egyedül tanulsz.',
-      kozephalado: 'Tudod a dolgod, csak időt nem találsz. Érthető. <strong>Nem neked kell alkalmazkodnod a módszerhez</strong> — a módszer alkalmazkodik hozzád. Platform, AI visszajelzés, strukturált anyag. Közös munka nélkül is halad.',
-      halado: 'Haladó vagy, kevés idővel. Nálad nem mennyiség, hanem <strong>célzott finomhangolás</strong> kell. Pár óra heti mentorálás is sokat hoz, ha a megfelelő pontokra koncentrálunk.',
-    },
-    failed: {
-      ujrakezdo: 'Nem foglak újabb módszerre rábeszélni. <strong>Először meg akarom érteni, mi nem működött eddig</strong> — utána tudom megmondani, hogy én mást tudok-e csinálni. Az első lépés egy beszélgetés.',
-      kozephalado: 'Nem foglak újabb módszerre rábeszélni. <strong>Először meg akarom érteni, mi nem működött eddig</strong> — utána tudom megmondani, hogy én mást tudok-e csinálni. Az első lépés egy beszélgetés.',
-      halado: 'Nem foglak újabb módszerre rábeszélni. <strong>Először meg akarom érteni, mi nem működött eddig</strong> — utána tudom megmondani, hogy én mást tudok-e csinálni. Az első lépés egy beszélgetés.',
-    },
+function getGainMessage() {
+  const { gain, gainOther } = state.answers;
+  const gainPhrases = {
+    career: 'egy előrelépést a karrieredben, amit eddig az angol blokkolt',
+    pride: 'a büszkeséget magadra, hogy végre megcsináltad',
+    freedom: 'a szabadságot — bárhol, bárkivel tudsz kommunikálni',
+    connection: 'valódi kapcsolatokat külföldi emberekkel, eszmékkel',
+    identity: 'egy új énképet — olyan emberré válsz, aki meg tudja csinálni',
+    other: gainOther || 'amit magadnak megfogalmaztál',
   };
-  
-  return messages[blocker]?.[level] || 'A válaszaid alapján <strong>pontosan tudom, hol tartasz</strong>, és van egy személyre szabott ajánlásom számodra.';
-}
-
-// =======================================================
-// RESULTS RENDERING
-// =======================================================
-function renderResults() {
-  // The student only sees a clean thank-you screen. 
-  // All the generated content (pain lead, level, package, focus, proof) goes in the 
-  // webhook payload — Bettina uses those fields to write her personal email from Airtable.
-  const firstName = state.answers.name.split(' ').pop() || 'Barátom';
-  document.getElementById('thankyouName').textContent = firstName;
+  return gainPhrases[gain] || 'valami értékeset';
 }
 
 function getPainLead(firstName) {
-  const { blocker, loss, goal } = state.answers;
-  
-  // Map loss to a human-readable phrase
+  const { blocker, loss } = state.answers;
   const lossPhrases = {
     opportunity: 'egy konkrét lehetőséget (előléptetést, új állást, vagy a külföldet)',
     confidence: 'a magabiztosságodat — és ha most is feladod, még nehezebb lesz újrakezdeni',
@@ -1466,8 +1539,6 @@ function getPainLead(firstName) {
     dream: 'egy álmot, ami lassan kopik',
     fedup: 'türelmed — és ez önmagában rossz hely, ahol rekedni',
   };
-  
-  // Map blocker to a pain statement (what's been going on)
   const blockerStatements = {
     speak: 'ott állsz a falnál, hogy <strong>érted, amit mondanak, de megszólalni nem mersz</strong>',
     live: 'ott állsz a falnál, hogy <strong>a nyelvtant tudod, de élesben elakadsz</strong>',
@@ -1475,19 +1546,14 @@ function getPainLead(firstName) {
     time: 'újra és újra <strong>nincs időd rendszeresen tanulni</strong>',
     failed: '<strong>minden módszer, amit eddig kipróbáltál, kudarcot vallott</strong>',
   };
-  
   const painPhrase = blockerStatements[blocker] || 'érzed, hogy elakadtál';
   const lossPhrase = lossPhrases[loss] || 'fontos dolgokat';
-  
-  // If failed → softer, more personal tone
   if (blocker === 'failed') {
     return {
       headline: `${firstName}, <em>őszintén:</em>`,
       body: `Azt mondtad, minden módszer kudarcot vallott, és attól félsz, hogy elveszíted <em>${lossPhrase}</em>. Ezt nem veszem félvállról. Mielőtt bármi másról beszélnénk — meg kell értenem, mi történt eddig.`,
     };
   }
-  
-  // Standard pain lead
   return {
     headline: `${firstName}, <em>figyelj, ez fontos:</em>`,
     body: `Most <strong>${painPhrase}</strong>. És ha a következő 6 hónapban nem változik semmi, elveszíted <em>${lossPhrase}</em>.<br><br>De itt a lényeg: <strong>ezen a ponton már voltak tanulóim.</strong> Át is lendültek.`,
@@ -1496,16 +1562,21 @@ function getPainLead(firstName) {
 
 function getStudentProof() {
   const { blocker } = state.answers;
-  
   const proofs = {
     speak: '<p><span class="rec-pkg-proof-name">Patrik</span> ugyanezzel jött hozzám — bizonytalan volt, félt megszólalni angolul. Ma már magabiztosan kommunikál, és hétről hétre fejlődik.</p>',
     live: '<p><span class="rec-pkg-proof-name">Erik</span> ugyanezt érezte, amíg el nem kezdtünk együtt dolgozni: a nyelvtant tudta, de elakadt élesben. Nemrég egy francia logisztikussal tárgyalt angolul — és 80%-ban megértette.</p>',
     forgot: '<p><span class="rec-pkg-proof-name">Nóra</span> úgy érkezett, hogy "én már mindent elfelejtettem". Ma önállóan tanul angolul, érzi a fejlődést heti szinten.</p>',
     time: '<p><span class="rec-pkg-proof-name">Palika</span> középfokú vizsgára készült kevés idővel. 6 közös óra után azt mondta: <em>"jobb tanárt nem is kívánhatnék magamnak."</em> Levizsgázott.</p>',
-    // Failed case: no student proof (deliberate — we're not pushing a package)
   };
-  
   return proofs[blocker] || null;
+}
+
+// =======================================================
+// RESULTS RENDERING
+// =======================================================
+function renderResults() {
+  const firstName = state.answers.name.split(' ').pop() || 'Barátom';
+  document.getElementById('thankyouName').textContent = firstName;
 }
 
 // =======================================================
@@ -1515,70 +1586,70 @@ let submissionRetryCount = 0;
 
 async function submitQuiz() {
   showScreen('screen-submitting');
-  updateProgress(13);
-  
+  updateProgress(18);
+
   const { level, levelLabel, correct } = computeLevel();
   const { pkg, reason } = recommendPackage();
   const pkgDetails = getPackageDetails(pkg);
   const focus = getPersonalizedFocus();
-  const greetingMsg = getGreetingMessage();
   const firstName = state.answers.name.split(' ').pop() || 'Barátom';
   const painLead = getPainLead(firstName);
   const studentProof = getStudentProof();
-  
-  // Strip HTML tags for clean Airtable storage (Bettina can add formatting in her email)
+  const gainMessage = getGainMessage();
+
   const stripHtml = (s) => s ? s.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() : '';
-  
+
   const payload = {
-    // Timestamp
     submittedAt: new Date().toISOString(),
-    
-    // Personal info
     name: state.answers.name,
     firstName: firstName,
     email: state.answers.email,
-    
-    // Discovery
+
     goal: state.answers.goal,
     goalOther: state.answers.goalOther,
     blocker: state.answers.blocker,
-    
-    // Language answers (raw)
-    q4: state.answers.q4, q4_correct: state.answers.q4 === 'c',
-    q5: state.answers.q5, q5_correct: state.answers.q5 === 'b',
-    q6: state.answers.q6, q6_correct: state.answers.q6 === 'a',
-    q7: state.answers.q7, q7_correct: state.answers.q7 === 'a',
-    q8: state.answers.q8, q8_correct: state.answers.q8 === 'b',
-    q9: state.answers.q9, q9_correct: state.answers.q9 === 'b',
-    q10: state.answers.q10, q10_correct: state.answers.q10 === 'b',
-    
-    // Language scoring
+
+    // Pain-point discovery
+    lastSpoke: state.answers.lastspoke,
+    feltAfter: state.answers.feltafter,
+    restarts: state.answers.restarts,
+    innerCritic: state.answers.innercritic,
+
+    // Language answers
+    g1: state.answers.g1, g1_correct: state.answers.g1 === 'c',
+    g2: state.answers.g2, g2_correct: state.answers.g2 === 'b',
+    g3: state.answers.g3, g3_correct: state.answers.g3 === 'a',
+    g4: state.answers.g4, g4_correct: state.answers.g4 === 'a',
+    g5: state.answers.g5, g5_correct: state.answers.g5 === 'b',
+    g6: state.answers.g6, g6_correct: state.answers.g6 === 'b',
+    g7: state.answers.g7, g7_correct: state.answers.g7 === 'b',
+
     correctCount: correct,
     totalQuestions: 7,
     level: level,
     levelLabel: levelLabel,
-    
-    // Commitment
+
+    // Commitment + vision
     weeklyHours: state.answers.time,
     biggestLoss: state.answers.loss,
+    gain: state.answers.gain,
+    gainOther: state.answers.gainOther,
+    gainMessage: gainMessage,
     whyNow: state.answers.whynow,
-    
-    // === DRAFT EMAIL CONTENT FOR BETTINA ===
-    // Pre-generated pieces Bettina can copy-paste/edit for her personal email to the student
+
+    // Draft email content
     recommendedPackage: pkg,
     recommendedPackageName: pkgDetails.name,
     recommendedPackagePrice: pkgDetails.price,
     recommendationReason: reason,
     painLeadHeadline: stripHtml(painLead.headline),
     painLeadBody: stripHtml(painLead.body),
-    greetingMessage: stripHtml(greetingMsg),
     focusBullet1: focus[0] || '',
     focusBullet2: focus[1] || '',
     focusBullet3: focus[2] || '',
     studentProof: stripHtml(studentProof || ''),
   };
-  
-  // Serialize payload OUTSIDE fetch to catch any JSON errors early
+
   let bodyString;
   try {
     bodyString = JSON.stringify(payload);
@@ -1587,52 +1658,38 @@ async function submitQuiz() {
     showScreen('screen-error');
     return;
   }
-  
-  // Race the fetch against a 12-second timeout — no AbortSignal (iOS Safari dislikes it)
+
   const fetchPromise = fetch(WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: bodyString,
     mode: 'cors',
   });
-  
   const timeoutPromise = new Promise((_, reject) => {
     setTimeout(() => reject(new Error('Request timeout')), 12000);
   });
-  
+
   try {
     const response = await Promise.race([fetchPromise, timeoutPromise]);
-    
-    // Check for HTTP errors but don't fail on opaque responses
     if (response && response.status >= 400 && response.status < 600) {
       throw new Error(`Webhook returned status ${response.status}`);
     }
-    
-    // Success path — 1.5s minimum spinner for premium feel
     setTimeout(() => {
       renderResults();
       showScreen('screen-results');
     }, 1500);
-    
   } catch (err) {
     console.error('Submission error:', err.message || err);
-    console.error('Error details:', { name: err.name, webhook: WEBHOOK_URL });
-    
     submissionRetryCount++;
     if (submissionRetryCount < 2) {
-      // One retry after a brief pause
       setTimeout(submitQuiz, 1500);
     } else {
-      // Fallback: show results anyway so student has their answer
-      // and replace "Mi következik" block with a direct email CTA
       try {
         localStorage.setItem('szintfelmero_lastSubmission', JSON.stringify(payload));
-      } catch(e) { /* storage unavailable, ignore */ }
-      
+      } catch(e) { /* storage unavailable */ }
       setTimeout(() => {
         renderResults();
         showScreen('screen-results');
-        // Replace the "24 órán belül válaszolok" message with a direct-email CTA
         const nextSteps = document.querySelector('.next-steps-body');
         if (nextSteps) {
           const subject = encodeURIComponent('Szintfelmérő eredmény — ' + (state.answers.name || ''));
@@ -1644,9 +1701,9 @@ async function submitQuiz() {
             '• Akadály: ' + state.answers.blocker + '\n\n' +
             'Szívesen beszélnék veled a részletekről.\n\nÜdvözlettel,\n' + state.answers.name
           );
-          nextSteps.innerHTML = 
+          nextSteps.innerHTML =
             '<strong>A kapcsolatfelvétel automatizálva nem sikerült</strong> — de az eredményed megvan! ' +
-            'Kérlek írj közvetlenül: <a href="mailto:baranyibettina@entropybreakers.com?subject=' + 
+            'Kérlek írj közvetlenül: <a href="mailto:baranyibettina@entropybreakers.com?subject=' +
             subject + '&body=' + body + '" style="color:var(--orange);text-decoration:underline;font-weight:500;">' +
             'baranyibettina@entropybreakers.com</a> — 24 órán belül válaszolok neked.';
         }
@@ -1656,7 +1713,7 @@ async function submitQuiz() {
 }
 
 document.getElementById('submitBtn').addEventListener('click', () => {
-  if (validateQuestion(13)) {
+  if (validateQuestion(18)) {
     submitQuiz();
   }
 });
