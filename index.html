@@ -14,10 +14,10 @@
 <meta property="og:url" content="https://entropybreakers.com/">
 <meta property="og:title" content="Gondolod, hogy tudsz angolul?">
 <meta property="og:description" content="13 kérdés — és megtudod, hol tartasz valójában. Ingyenes szintfelmérő 5 perc alatt.">
-<meta property="og:image" content="https://entropybreakers.com/og-share.jpg">
+<meta property="og:image" content="https://entropybreakers.com/images/bettina-baranyi.png">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Entropy Breakers — Ingyenes angol szintfelmérő">
+<meta property="og:image:height" content="1507">
+<meta property="og:image:alt" content="Bettina Baranyi — Entropy Breakers angol mentor">
 <meta property="og:locale" content="hu_HU">
 <meta property="og:site_name" content="Entropy Breakers">
 
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Gondolod, hogy tudsz angolul?">
 <meta name="twitter:description" content="13 kérdés — és megtudod, hol tartasz valójában. Ingyenes szintfelmérő 5 perc alatt.">
-<meta name="twitter:image" content="https://entropybreakers.com/og-share.jpg">
+<meta name="twitter:image" content="https://entropybreakers.com/images/bettina-baranyi.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,14 +119,15 @@ nav.solid{background:rgba(10,8,6,.96);backdrop-filter:blur(20px);border-bottom:1
   content:'';
   position:absolute;
   left:0;right:0;bottom:0;
-  height:80px;
-  background:linear-gradient(180deg,transparent,var(--bg));
+  height:160px;
+  background:linear-gradient(180deg,transparent 0%,var(--bg) 65%);
   pointer-events:none;
 }
 .hero-text{
   position:relative;
   z-index:2;
-  padding:8px 0 48px;
+  margin-top:-40px;
+  padding:0 0 48px;
   text-align:left;
 }
 .hero-label{
@@ -230,6 +231,8 @@ nav.solid{background:rgba(10,8,6,.96);backdrop-filter:blur(20px);border-bottom:1
   .hero{padding:130px 48px 0}
   .hero-inner{max-width:920px}
   .hero-portrait-wrap{height:72vh;min-height:560px;max-height:820px}
+  .hero-portrait-wrap::after{height:220px}
+  .hero-text{margin-top:-72px}
   .hero h1{font-size:88px}
   .hero-sub{font-size:19px}
 }
@@ -464,6 +467,120 @@ nav.solid{background:rgba(10,8,6,.96);backdrop-filter:blur(20px);border-bottom:1
 .path-list li::before{
   content:'•';color:var(--orange);font-size:18px;
   position:absolute;left:0;top:4px;line-height:1;
+}
+
+/* POSITIONING (tanfolyam vs magánóra vs EB) */
+.pos-sec{background:var(--bg);padding:120px 40px}
+.pos-head{text-align:center;max-width:780px;margin:0 auto 64px}
+.pos-head .sec-h2 em{color:var(--orange);font-style:italic;font-weight:500}
+.pos-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;
+  align-items:stretch;
+}
+.pos-col{
+  padding:40px 32px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:4px;
+  display:flex;flex-direction:column;
+}
+.pos-col.hot{
+  background:linear-gradient(165deg,#c96a2e 0%,#a8531f 100%);
+  border-color:transparent;
+  transform:scale(1.03);
+}
+.pos-col-h{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:500;line-height:1.2;
+  color:var(--cream);margin-bottom:28px;
+  letter-spacing:-.005em;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--border);
+}
+.pos-col.hot .pos-col-h{color:#fff;border-bottom-color:rgba(255,255,255,.22)}
+.pos-col ul{list-style:none;flex:1}
+.pos-col li{
+  font-size:14px;font-weight:300;line-height:1.55;
+  color:var(--cream2);padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.pos-col li:last-child{border-bottom:none}
+.pos-col.hot li{color:rgba(255,255,255,.94);border-bottom-color:rgba(255,255,255,.15)}
+.pos-col.hot li strong{color:#fff;font-weight:600}
+.pos-foot{
+  text-align:center;max-width:760px;margin:56px auto 0;
+  font-size:15px;font-weight:300;line-height:1.7;
+  color:var(--cream2);font-style:italic;
+}
+.pos-foot em{color:var(--orange);font-style:italic;font-weight:400}
+
+/* KINEK VALÓ (5 helyzet) */
+.kv-sec{background:var(--bg2);padding:120px 40px}
+.kv-head{text-align:center;max-width:760px;margin:0 auto 64px}
+.kv-head .sec-h2 em{color:var(--orange);font-style:italic;font-weight:500}
+.kv-grid{
+  max-width:1180px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.kv-card{
+  padding:36px 32px;
+  background:var(--bg3);
+  border:1px solid var(--border);
+  border-radius:4px;
+}
+.kv-lbl{
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--orange);font-weight:500;margin-bottom:14px;
+}
+.kv-t{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;line-height:1.28;
+  color:var(--cream);margin-bottom:18px;
+  letter-spacing:-.005em;
+}
+.kv-b{
+  font-size:14px;font-weight:300;line-height:1.7;
+  color:var(--cream2);
+}
+.kv-b strong{color:var(--cream);font-weight:500}
+.kv-foot{
+  text-align:center;max-width:780px;margin:56px auto 0;
+  font-size:15px;font-weight:300;line-height:1.7;
+  color:var(--cream2);
+}
+.kv-foot em{color:var(--orange);font-style:italic;font-weight:400}
+
+/* SZÁMOK (7 év / 500+ / 24/7) */
+.num-sec{background:var(--bg);padding:120px 40px}
+.num-head{text-align:center;max-width:760px;margin:0 auto 64px}
+.num-head .sec-h2 em{color:var(--orange);font-style:italic;font-weight:500}
+.num-grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.num-card{
+  padding:52px 36px;text-align:center;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:4px;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+}
+.num-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:84px;font-weight:500;line-height:1;
+  color:var(--orange);margin-bottom:20px;
+  letter-spacing:-.02em;
+}
+.num-t{
+  font-size:14px;font-weight:300;line-height:1.7;
+  color:var(--cream2);
+}
+.num-t strong{color:var(--cream);font-weight:500}
+.num-foot{
+  text-align:center;max-width:780px;margin:56px auto 0;
+  font-size:15px;font-weight:300;line-height:1.75;
+  color:var(--cream2);font-style:italic;
 }
 
 /* PROGRAM STRUCTURE (step-by-step modules) */
@@ -752,6 +869,26 @@ nav.solid{background:rgba(10,8,6,.96);backdrop-filter:blur(20px);border-bottom:1
 .pkg.hot .pkg-list li::before{color:#fff}
 .pkg.hot .pkg-list li.strike{color:rgba(255,255,255,.35)}
 .pkg.hot .pkg-list li.strike::before{color:rgba(255,255,255,.35)}
+.pkg-fit{
+  font-size:13px;font-weight:300;line-height:1.55;
+  color:var(--cream2);
+  padding:16px 18px;margin-bottom:28px;
+  border-left:2px solid var(--orange);
+  background:rgba(212,118,59,.05);
+  border-radius:2px;
+}
+.pkg-fit strong{color:var(--cream);font-weight:500}
+.pkg.hot .pkg-fit{
+  color:rgba(255,255,255,.9);
+  border-left-color:#fff;
+  background:rgba(255,255,255,.1);
+}
+.pkg.hot .pkg-fit strong{color:#fff}
+.pkg-note{
+  text-align:center;max-width:720px;margin:56px auto 0;
+  font-size:14px;font-weight:300;line-height:1.65;
+  color:var(--cream2);font-style:italic;
+}
 .pkg-btn{
   display:block;text-align:center;
   padding:15px 24px;
@@ -812,6 +949,11 @@ nav.solid{background:rgba(10,8,6,.96);backdrop-filter:blur(20px);border-bottom:1
   pointer-events:none;z-index:1;
 }
 .btn-dark:hover{background:#2a2018;transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.24)}
+.final-foot{
+  font-size:13px;font-weight:300;line-height:1.7;
+  color:#5a5450;max-width:560px;margin:24px auto 0 !important;
+  font-style:italic;
+}
 
 /* FAQ */
 .faq-sec{background:var(--bg);padding:120px 40px}
@@ -861,6 +1003,14 @@ footer{
   .nemkell-grid{grid-template-columns:1fr;gap:16px}
   .psr-grid{grid-template-columns:1fr;gap:16px}
   .paths-grid{grid-template-columns:1fr;gap:16px}
+  .pos-sec{padding:80px 24px}
+  .pos-grid{grid-template-columns:1fr;gap:16px}
+  .pos-col.hot{transform:none}
+  .kv-sec{padding:80px 24px}
+  .kv-grid{grid-template-columns:1fr;gap:16px}
+  .num-sec{padding:80px 24px}
+  .num-grid{grid-template-columns:1fr;gap:16px}
+  .num-big{font-size:68px}
   .prog-item{grid-template-columns:1fr;gap:16px}
   .prog-num{font-size:52px}
   .mentor-sec{padding:72px 24px}
@@ -1186,19 +1336,18 @@ footer{
       <img src="images/bettina-baranyi.png" alt="Bettina Baranyi" loading="lazy">
     </div>
     <div class="hero-text">
-      <p class="hero-label">Bettina Baranyi · Angol Mentor Program</p>
+      <p class="hero-label">Bettina Baranyi · Angol mentor + saját tanulói rendszer</p>
       <h1>
-        <span class="line">Építsd fel</span>
-        <span class="line">az első valódi</span>
-        <span class="line">áttörésed</span>
-        <span class="italic-line">9 hét alatt.</span>
+        <span class="line">Nem tanfolyam.</span>
+        <span class="line">Nem magánóra.</span>
+        <span class="italic-line">Mentorálás rendszerrel.</span>
       </h1>
-      <p class="hero-sub">Lépésről lépésre felépített rendszer <strong>500+ tanuló</strong> tapasztalatából.</p>
-      <p class="hero-meta">7+ év mentori tapasztalat · 24/7 AI visszajelzés · Személyre szabva.</p>
+      <p class="hero-sub">Heti élő óra velem + egy tanulói platform, ami szintekre, szekciókra (elmélet · gyakorló · szószedet) van bontva. A gyakorlódon <strong>24/7 AI visszajelzést</strong> kapsz — az én hangomon, az én stílusomban.</p>
+      <p class="hero-meta">500+ tanuló · 7+ év mentorálás · a te tempódban, ítélkezés nélkül.</p>
     </div>
     <div class="hero-cta-wrap">
-      <a href="/szintfelmero" class="btn-primary-big">Csatlakozom a programhoz</a>
-      <p class="hero-foot">Szintfelmérő · 100% ingyenes · 24 órán belül válasz</p>
+      <a href="/szintfelmero" class="btn-primary-big">Kitöltöm a szintfelmérőt</a>
+      <p class="hero-foot">Ingyenes szintfelmérő · 24 órán belül személyes válasz tőlem</p>
     </div>
   </div>
 </section>
@@ -1219,174 +1368,165 @@ footer{
   </div>
 </section>
 
-<!-- NEM KELL (equivalent of "You DON'T need") -->
-<section class="sec nemkell-sec">
-  <div class="nemkell-head r">
-    <p class="sec-eyebrow center">Amire gondolod, hogy szükséged lenne</p>
-    <h2 class="sec-h2 center">Nem kell <em>tökéletesnek</em> lenned ahhoz, hogy elkezdd</h2>
-    <p class="sec-lead center">A legtöbb tanulóm azt hitte, hogy ezek a dolgok mind szükségesek. Nem azok. Ezért nem jutottak előbbre — egy rendszer nélkül próbálkoztak.</p>
+<!-- POZÍCIONÁLÓ: tanfolyam vs magánóra vs Entropy Breakers -->
+<section class="pos-sec">
+  <div class="pos-head r">
+    <p class="sec-eyebrow center">Miben más</p>
+    <h2 class="sec-h2 center">A legtöbb angoltanár vagy tanfolyamot ad, vagy magánórát. <em>Nálam mindkettő van — plusz egy rendszer, ami a köztes napokon is dolgozik érted.</em></h2>
+    <p class="sec-lead center">Az élő óra egy hetente egyszer van. A tanulás nem. A platformom szintekre és szekciókra bontva gyakoroltat veled akkor is, amikor én éppen nem vagyok ott — és az AI úgy válaszol, mintha én válaszolnék.</p>
   </div>
-  <div class="nemkell-grid">
-    <div class="nemkell-card r">
-      <div class="nemkell-x">✕</div>
-      <h3 class="nemkell-t">NEM kell tökéletes nyelvtan</h3>
-      <p class="nemkell-b">Elég, ha az alapok megvannak — a többit együtt építjük fel, a te valódi beszédhelyzeteidre szabva.</p>
-    </div>
-    <div class="nemkell-card r d1">
-      <div class="nemkell-x">✕</div>
-      <h3 class="nemkell-t">NEM kell napi 2 óra tanulás</h3>
-      <p class="nemkell-b">A rendszer heti 1-2 órára épül + rövid, célzott gyakorlásra. Ez mellett dolgozol, utazol, élsz.</p>
-    </div>
-    <div class="nemkell-card r d2">
-      <div class="nemkell-x">✕</div>
-      <h3 class="nemkell-t">NEM kell "nyelvtehetség"</h3>
-      <p class="nemkell-b">A nyelvtudás nem adottság kérdése, hanem módszeré. Ezt a tanulóim naponta bizonyítják.</p>
-    </div>
-    <div class="nemkell-card r d3">
-      <div class="nemkell-x">✕</div>
-      <h3 class="nemkell-t">NEM kell "végre bátornak" lenned</h3>
-      <p class="nemkell-b">Ítéletmentes, biztonságos környezetet kapsz, ahol a hibázás a fejlődés része — nem a kudarcé.</p>
-    </div>
-    <div class="nemkell-card r d4">
-      <div class="nemkell-x">✕</div>
-      <h3 class="nemkell-t">NEM kell megint elölről kezdeni</h3>
-      <p class="nemkell-b">A tudásod nincs elveszve — csak szétszóródott. Visszarendezzük és aktívvá tesszük, ami már benned van.</p>
-    </div>
-    <div class="nemkell-card r d5">
-      <div class="nemkell-x">✕</div>
-      <h3 class="nemkell-t">NEM kell hinned benne</h3>
-      <p class="nemkell-b">Nem kérem, hogy bízz bennem vakon. Kérem, hogy csináld velem 4 hétig — és utána döntsd el.</p>
-    </div>
-  </div>
-</section>
+  <div class="pos-grid">
 
-<!-- URGENCY / STOP BLOCK -->
-<section class="stop-sec">
-  <h2 class="stop-h r">Ne nézd tovább, hogy mások megtanulnak angolul — <em>amíg te ugyanott ragadsz</em></h2>
-  <p class="stop-sub r d1">A rendszer egyszerűsíti a belépést. Néhány hét alatt érezhetően magabiztosabb leszel — feltéve, hogy elindulsz.</p>
-  <a href="/szintfelmero" class="btn-light r d2">Kitöltöm a szintfelmérőt</a>
+    <div class="pos-col r">
+      <h3 class="pos-col-h">Tanfolyam</h3>
+      <ul>
+        <li>Csoportos, merev tempó</li>
+        <li>Videók, PDF-ek</li>
+        <li>„Majd egyedül gyakorolsz"</li>
+      </ul>
+    </div>
+
+    <div class="pos-col r d1">
+      <h3 class="pos-col-h">Magánóra</h3>
+      <ul>
+        <li>Rugalmas, de a köztes napokon semmi</li>
+        <li>Csak az óra</li>
+        <li>„Találkozunk jövő héten"</li>
+      </ul>
+    </div>
+
+    <div class="pos-col hot r d2">
+      <h3 class="pos-col-h">Entropy Breakers</h3>
+      <ul>
+        <li>Élő mentor <strong>+</strong> saját platform</li>
+        <li>Szintek · szekciók · <strong>24/7 AI visszajelzés</strong></li>
+        <li><strong>Minden nap</strong> van mire leülni</li>
+      </ul>
+    </div>
+
+  </div>
+  <p class="pos-foot">Ez nem egy kurzus, amit megveszel és elraksz. Ez egy <em>élő rendszer</em> — velem a heti órán, és a platformon 7 napban 7-szer.</p>
 </section>
 <!-- AFTER YOU JOIN -->
 <section class="sec after-sec">
   <div class="after-head r">
     <p class="sec-eyebrow center">Ez történik, ha csatlakozol</p>
-    <h2 class="sec-h2 center">Nem csak tanulod az angolt. <em>Végre használod.</em></h2>
-    <p class="sec-lead center">A programom nem egy újabb tanfolyam — hanem egy komplett rendszer, ami az órákon kívül is dolgozik érted.</p>
+    <h2 class="sec-h2 center">Nem egy újabb kezdés. <em>Ezúttal a célig.</em></h2>
+    <p class="sec-lead center">A diákjaim jönnek egy célért — interjú, utazás, vizsga, meetingek — és megkapják hozzá a rendszert, ami el is juttatja oda őket.</p>
   </div>
   <div class="after-list">
     <div class="after-item r">
       <span class="after-n">01</span>
       <div>
-        <h3 class="after-t">Kész rendszert kapsz, nem önmagad megmentését</h3>
-        <p class="after-b">Személyre szabott Notion diákoldal, 24/7 AI visszajelzés, lépésről lépésre felépített platform — minden egy helyen. Nem kell kitalálnod, mit csinálj két óra között: pontosan tudni fogod.</p>
+        <h3 class="after-t">Az első pár hét: megszólalsz anélkül, hogy fejben mondatot fordítanál</h3>
+        <p class="after-b">Először az önbizalom jön vissza. A heti élő óra + a napi platform-gyakorlás együtt oldja a blokkot. Nem új szavakkal — azzal, hogy újra használod, ami már benned van.</p>
       </div>
     </div>
     <div class="after-item r">
       <span class="after-n">02</span>
       <div>
-        <h3 class="after-t">Az áttörést a rendszer építi, nem a szorgalom</h3>
-        <p class="after-b">A passzív és aktív tudás között van egy rés — és ezt nem akarattal, hanem strukturált gyakorlással lehet áthidalni. A módszer erre van tervezve, nem a motivációdra.</p>
+        <h3 class="after-t">1–3 hónap: kezelhetővé válik, ami eddig megbénított</h3>
+        <p class="after-b">Meeting. Interjú. Külföldi ügyfél. Utazás. Az a szituáció, amitől féltél, most már egy feladat, amire van módszered — nem egy vészhelyzet.</p>
       </div>
     </div>
     <div class="after-item r">
       <span class="after-n">03</span>
       <div>
-        <h3 class="after-t">A te valódi helyzetedre szabva — nem egy tankönyvre</h3>
-        <p class="after-b">Business meeting? Amerikai kolléga? Nyelvvizsga? A mentoráláson pontosan arra készítelek fel, ami rád vár. Nem általános angol — a tiéd.</p>
+        <h3 class="after-t">3–6 hónap: elérted a célt, amiért eljöttél</h3>
+        <p class="after-b">A vizsgán teljesítesz. Az interjún átmész. A külföldi munka elindul. Az utazás élmény, nem küzdelem. Konkrétan, számszerűen — nem „általános javulás".</p>
       </div>
     </div>
     <div class="after-item r">
       <span class="after-n">04</span>
       <div>
-        <h3 class="after-t">Mérhető fejlődés, nem ködös "javulás"</h3>
-        <p class="after-b">Pár héten belül érezhető változás — főleg önbizalomban. Az igazi áttörés általában 4-8 héten belül jön, ha következetesen haladunk együtt.</p>
+        <h3 class="after-t">Utána: önállóan mész tovább — ha akarod</h3>
+        <p class="after-b">A rendszer nem függőséget épít. Megtanulod, hogyan tanulj magadtól. Ha akarod, maradsz velem — ha nem, önállóan haladsz tovább.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM / SOLUTION / RESULT -->
-<section class="sec psr-sec">
-  <div class="wrap-narrow" style="text-align:center;margin-bottom:0">
-    <p class="sec-eyebrow center r">A teljes kép</p>
-    <h2 class="sec-h2 center r d1">Három ok, amiért más tanárnál nem sikerült — <em>és itt fog</em></h2>
+<!-- KINEK VALÓ (5 helyzet) -->
+<section class="kv-sec">
+  <div class="kv-head r">
+    <p class="sec-eyebrow center">Kinek való</p>
+    <h2 class="sec-h2 center">Ha ebben a 6 helyzetben bármelyikben magadra ismersz, <em>jó helyen vagy.</em></h2>
+    <p class="sec-lead center">Nem kell „nyelvtanulótípusnak" lenned. A rendszer a te valódi helyzetedhez igazodik, nem fordítva.</p>
   </div>
-  <div class="psr-grid">
-    <div class="psr-card r">
-      <p class="psr-label">A probléma</p>
-      <h3 class="psr-t">A legtöbb óra "frontális oktatás", nem rendszer</h3>
-      <p class="psr-b">Heti 1-2 óra önmagában soha nem volt elég. Ha a köztes időben nincs struktúra, pár nap után elúszik minden. Ezért nem jutottál előbbre — nem miattad.</p>
+  <div class="kv-grid">
+
+    <div class="kv-card r">
+      <p class="kv-lbl">01 · Szakmai</p>
+      <h3 class="kv-t">„A munkám miatt kellene — és már ciki, hogy nem megy"</h3>
+      <p class="kv-b">40-es szakmai, marketinges, projektmenedzser, mérnök. Érted, amit a kollégák mondanak. De amikor neked kellene megszólalnod egy meetingen vagy megírni egy e-mailt, leblokkolsz. Nem új szavakra van szükséged — hanem arra, hogy <strong>használd</strong>, ami benned van, biztos talajon.</p>
     </div>
-    <div class="psr-card highlight r d1">
-      <p class="psr-label">A megoldás</p>
-      <h3 class="psr-t">Komplett ökoszisztéma, amit mi építünk neked</h3>
-      <p class="psr-b">Platform + személyre szabott Notion oldal + 24/7 AI visszajelzés + mentorálás. A rendszer minden nap aktív — akkor is, amikor te nem.</p>
-      <div class="psr-stats">
-        <div class="psr-stat"><strong>7+</strong> év mentori tapasztalat</div>
-        <div class="psr-stat"><strong>500+</strong> tanuló, akik áttörtek</div>
-        <div class="psr-stat"><strong>24/7</strong> AI visszajelzés</div>
-      </div>
+
+    <div class="kv-card r d1">
+      <p class="kv-lbl">02 · Utazó</p>
+      <h3 class="kv-t">„Utazni akarok, és ne tátogjak a boltban"</h3>
+      <p class="kv-b">Terveid vannak — egy hosszabb út, egy külföldi munka, egy élmény. Tankönyv-angolt már tudsz; most <strong>élő, valódi beszélgetés</strong> kell, ami nem egy vizsgateremben, hanem egy külföldi kávézóban is működik.</p>
     </div>
-    <div class="psr-card r d2">
-      <p class="psr-label">Az eredmény</p>
-      <h3 class="psr-t">4-8 hét alatt érezhető, valódi magabiztosság</h3>
-      <p class="psr-b">Nem elméleti tudás — használható, élő angol. Meetingen, utazáson, vizsgán. Pár héten belül látod, pár hónap alatt átveszed az irányítást.</p>
+
+    <div class="kv-card r d2">
+      <p class="kv-lbl">03 · Külföldi munka</p>
+      <h3 class="kv-t">„Külföldön szeretnék dolgozni — de az interjúra be kell készülni"</h3>
+      <p class="kv-b">Van egy konkrét célod: külföldi állás, interjú, esetleg egy cég, aki vár. Most nem „angolt általában" akarsz tanulni, hanem <strong>felkészülni arra, ami rád vár</strong>. A CV-től a tárgyalási szókincsig.</p>
     </div>
+
+    <div class="kv-card r d3">
+      <p class="kv-lbl">04 · Vizsgázó</p>
+      <h3 class="kv-t">„Vizsgázom, és nem akarok csak remélni"</h3>
+      <p class="kv-b">Középiskolás, egyetemista, vagy felnőtt, aki nyelvvizsgát tesz. Nem elég, hogy „nagyjából tudok" — <strong>mérhetően kell teljesítened</strong> egy adott napon. Strukturált felkészülésre van szükséged, nem random feladatlapokra.</p>
+    </div>
+
+    <div class="kv-card r d4">
+      <p class="kv-lbl">05 · Saját tempó</p>
+      <h3 class="kv-t">„Fejlődni akarok — de nem vizsgához, nem határidőhöz"</h3>
+      <p class="kv-b">Nem sürget semmi. Csak tudod, hogy évek óta nem haladsz, és ez bánt. Nem akarsz tanfolyamra járni, nem akarsz 9 hetes „áttörést" — hanem egy <strong>valódi mentort és egy rendszert</strong>, ami mellett a saját tempódban fejlődhetsz, akár évekig.</p>
+    </div>
+
+    <div class="kv-card r d5">
+      <p class="kv-lbl">06 · Megszólalás</p>
+      <h3 class="kv-t">„Tudom a nyelvtant, de nem merek megszólalni"</h3>
+      <p class="kv-b">Ismered a szabályokat, olvasva megy, írásban elboldogulsz. De amikor ki kellene nyitnod a szád, leblokkolsz — félsz, hogy hibázol, hogy kinevetnek, hogy „cikis" lesz. Ez nem <strong>tudás</strong> kérdése, hanem <strong>önbizalomé</strong>. Nem újabb nyelvtankönyvre van szükséged, hanem egy mentorra, aki ítélkezés nélkül végigvezet, amíg magabiztosan meg mersz szólalni.</p>
+    </div>
+
   </div>
+  <p class="kv-foot">Mindegyik helyzet más — de a módszer mindegyikhez ugyanaz: heti élő óra velem, amit a saját céljaidra szabok, plusz a platform, ami <em>minden nap veled van.</em></p>
 </section>
 
-<!-- TWO PATHS -->
-<section class="sec paths-sec">
-  <div class="paths-intro r">
-    <p class="sec-eyebrow center">Kinek való ez a program</p>
-    <h2 class="sec-h2 center">A rendszer <em>kétféle emberre</em> van tervezve</h2>
-    <p class="sec-lead center">Mindegy, hol tartasz most — a módszer a te kiindulópontodra épül. Nem kezdünk mindent elölről.</p>
+<!-- SZÁMOK (7 év / 500+ / 24/7) -->
+<section class="num-sec">
+  <div class="num-head r">
+    <p class="sec-eyebrow center">Miért érdemes velem</p>
+    <h2 class="sec-h2 center">Hét év, ötszáz ember, <em>egy rendszer, ami működik.</em></h2>
   </div>
-  <div class="paths-grid">
-    <div class="path-card r">
-      <p class="path-num">1. Út — Újrakezdő</p>
-      <h3 class="path-title">A "<em>régen tudtam, most nem</em>" típus</h3>
-      <p class="path-heading">Te vagy, ha:</p>
-      <ul class="path-list">
-        <li>Gimnáziumban vagy egyetemen tanultál, de évek óta nem használtad</li>
-        <li>Érted, amit mondanak — de megszólalni nem mersz</li>
-        <li>Dolgozol, vállalkozol, családod van — nincs idő "elölről kezdeni"</li>
-        <li>Tudod, hogy benned van — csak elő kell hozni</li>
-      </ul>
-      <p class="path-heading">Mit kapsz tőlem:</p>
-      <ul class="path-list">
-        <li>Visszarendezzük az alapokat anélkül, hogy unnád</li>
-        <li>Aktivizáljuk a passzív tudást strukturált gyakorlással</li>
-        <li>A saját beszédhelyzeteidre szabott rendszert</li>
-        <li>Türelmes, ítéletmentes tempót — nincs szégyen</li>
-      </ul>
+  <div class="num-grid">
+
+    <div class="num-card r">
+      <div class="num-big">500+</div>
+      <p class="num-t"><strong>Tanuló</strong>, aki végigment a rendszeren — kezdőtől haladóig, utazótól vizsgázóig.</p>
     </div>
-    <div class="path-card r d1">
-      <p class="path-num">2. Út — Középhaladó</p>
-      <h3 class="path-title">A "<em>értek mindent, de rázós</em>" típus</h3>
-      <p class="path-heading">Te vagy, ha:</p>
-      <ul class="path-list">
-        <li>Már kommunikálsz angolul — de nem olyan magabiztosan, mint szeretnéd</li>
-        <li>Üzleti helyzetekben hezitálsz, vagy kiejtés-gondjaid vannak</li>
-        <li>Meetingen, interjún vagy prezentáción akarsz jobb lenni</li>
-        <li>Nyelvvizsgára készülsz vagy céges szintet akarsz emelni</li>
-      </ul>
-      <p class="path-heading">Mit kapsz tőlem:</p>
-      <ul class="path-list">
-        <li>Finomhangolás és célzott fejlesztés, nem általános anyag</li>
-        <li>Valódi üzleti/szakmai kontextus, nem tankönyvi párbeszéd</li>
-        <li>Kiejtés, intonáció, gyorsaság — a finom réteg</li>
-        <li>Felkészítés arra, ami rád vár — interjú, vizsga, külföldi munka</li>
-      </ul>
+
+    <div class="num-card r d1">
+      <div class="num-big">7+ év</div>
+      <p class="num-t"><strong>Angol mentorálás</strong> — nem elmélet, hanem a tanári székben töltött évek tapasztalata.</p>
     </div>
+
+    <div class="num-card r d2">
+      <div class="num-big">24/7</div>
+      <p class="num-t"><strong>A tanulói platform és az AI</strong> — akkor is dolgozik érted, amikor én nem vagyok ott.</p>
+    </div>
+
   </div>
+  <p class="num-foot">Nem azt ígérem, hogy nálam fog sikerülni, mert máshol rossz volt. Azt ígérem, hogy olyan rendszert adok, amit eddig nem kaptál.</p>
 </section>
 <!-- PROGRAM STRUCTURE -->
 <section class="sec prog-sec">
   <div class="prog-head r">
-    <p class="sec-eyebrow center">A program felépítése</p>
-    <h2 class="sec-h2 center prog-h2">4 lépés, ami <em>valódi eredményt</em> hoz</h2>
-    <p class="sec-lead center">Nem tanfolyam. Nem lecke-sorozat. Egy lépésenként felépített rendszer, ami végigkísér az első naptól a teljes magabiztosságig.</p>
+    <p class="sec-eyebrow center">Így dolgozunk együtt</p>
+    <h2 class="sec-h2 center prog-h2">Négy lépés. <em>Nincs varázslat, nincs nyomás.</em></h2>
+    <p class="sec-lead center">Nem tanfolyam, nem lecke-sorozat. Egy mentorálási folyamat, ami az első találkozástól veled van, és a saját tempódhoz igazodik — nem fordítva.</p>
   </div>
   <div class="prog-list">
     <div class="prog-item r">
@@ -1395,14 +1535,15 @@ footer{
         <div class="prog-step-label">Kezdőpont</div>
       </div>
       <div class="prog-content">
-        <h3 class="prog-title">Szintfelmérés és valós célok</h3>
-        <p class="prog-lead">Első lépésként pontosan megnézzük, hol tartasz és mit akarsz elérni. Nem az van, hogy "A2-es vagy és kész". Azt nézzük, mit tudsz használni élő helyzetben, és mit akarsz 3, 6, 12 hónap múlva.</p>
+        <h3 class="prog-title">Szintfelmérő</h3>
+        <p class="prog-lead">Első lépésként megnézem, hol tartasz valójában. Nem egy általános A2/B1/B2 kategóriát akarunk, hanem azt, hogy mit tudsz ténylegesen használni egy meetingen, egy beszélgetésben, egy e-mailben.</p>
         <div class="prog-outcomes">
-          <p class="prog-outcomes-lbl">Eredmény</p>
+          <p class="prog-outcomes-lbl">Amit kapsz</p>
           <ul class="prog-outcomes-list">
-            <li>Konkrét szint-diagnózis, nem általános kategória</li>
-            <li>Személyre szabott ajánlás a megfelelő csomagra</li>
-            <li>Valódi, mérhető célok 4 / 12 / 24 hétre</li>
+            <li>Kitöltöd az ingyenes online szintfelmérőt</li>
+            <li>24 órán belül én válaszolok — személyesen, nem automata</li>
+            <li>Ajánlok egy csomagot, ami illik a céljaidhoz és a tempódhoz</li>
+            <li>Nincs kötelezettség — ha nem indulunk, az is rendben van</li>
           </ul>
         </div>
       </div>
@@ -1411,17 +1552,18 @@ footer{
     <div class="prog-item r">
       <div class="prog-num-wrap">
         <div class="prog-num">02</div>
-        <div class="prog-step-label">1. lépés</div>
+        <div class="prog-step-label">Első lépés</div>
       </div>
       <div class="prog-content">
-        <h3 class="prog-title">Személyre szabott rendszer felépítése</h3>
-        <p class="prog-lead">Elkészül a te Notion diákoldalad, a platform hozzáférés, az AI visszajelzés beállítása. Minden anyag, feladat, számonkérés a te szintedre és céljaidra van szabva — nem egy általános tananyag.</p>
+        <h3 class="prog-title">A rendszered felépítése</h3>
+        <p class="prog-lead">Ha beléptél, nem kapsz egy sablont — a tiédet építjük fel. Elkészül a saját Notion diákoldalad, beállítjuk a tanulói platformot a te szintedre, és tisztázzuk, mit akarsz elérni.</p>
         <div class="prog-outcomes">
-          <p class="prog-outcomes-lbl">Eredmény</p>
+          <p class="prog-outcomes-lbl">Amit kapsz</p>
           <ul class="prog-outcomes-list">
-            <li>Saját digitális tanulóoldalad, amit tulajdonolsz</li>
-            <li>24/7 AI visszajelzés a gyakorlásodra</li>
-            <li>Strukturált tananyag, ami a te gyenge pontjaidra épít</li>
+            <li>Saját Notion diákoldal — csak a tiéd, egész úton veled</li>
+            <li>Tanulói platform hozzáférés, szintedre szabva</li>
+            <li>AI visszajelzés beállítása — az én hangomon</li>
+            <li>Első közös óra: célok, fájdalompontok, tempó</li>
           </ul>
         </div>
       </div>
@@ -1430,17 +1572,18 @@ footer{
     <div class="prog-item r">
       <div class="prog-num-wrap">
         <div class="prog-num">03</div>
-        <div class="prog-step-label">2. lépés</div>
+        <div class="prog-step-label">Heti ritmus</div>
       </div>
       <div class="prog-content">
-        <h3 class="prog-title">Heti mentorálás + napi gyakorlás</h3>
-        <p class="prog-lead">Heti 1-2 óra közös munka — és ami köztük van. A valódi áttörés az órákon kívül történik. A platform + AI visszajelzés + Notion oldal gondoskodik arról, hogy minden nap aktív legyen a fejlődésed.</p>
+        <h3 class="prog-title">Mentorálás + gyakorlás a köztes napokon</h3>
+        <p class="prog-lead">Minden héten találkozunk élőben (1×, 2× vagy 3× — aszerint, amit választottál), és a közötte lévő napokon a platform + az AI dolgozik veled. Nem kell magadnak kitalálnod, mit csinálj — pontosan tudni fogod.</p>
         <div class="prog-outcomes">
-          <p class="prog-outcomes-lbl">Eredmény</p>
+          <p class="prog-outcomes-lbl">Amit kapsz</p>
           <ul class="prog-outcomes-list">
-            <li>Minden nap 10-20 perc aktív gyakorlás — strukturáltan</li>
-            <li>A hibáidból tanulsz, nem ismétled őket</li>
-            <li>Lépésről lépésre mérhető, látható fejlődés</li>
+            <li>Heti élő óra velem — a célodra szabva</li>
+            <li>Napi 10–20 perc gyakorlás a platformon, ha akarsz (de nem kötelező)</li>
+            <li>AI visszajelzés minden gyakorlásra — az én hangomon</li>
+            <li>Heti követés: mi megy, mi nem, hogy finomítsunk</li>
           </ul>
         </div>
       </div>
@@ -1449,17 +1592,18 @@ footer{
     <div class="prog-item r">
       <div class="prog-num-wrap">
         <div class="prog-num">04</div>
-        <div class="prog-step-label">3. lépés</div>
+        <div class="prog-step-label">Fejlődés</div>
       </div>
       <div class="prog-content">
-        <h3 class="prog-title">Áttörés — magabiztos, valós használat</h3>
-        <p class="prog-lead">4-8 héten belül érezhető változás. Először az önbizalom jön vissza — aztán a folyamatos beszéd, a bonyolultabb helyzetek, a spontán reakciók. És ha eddig eljutottunk, onnan már a te döntésed, milyen messzire akarsz menni.</p>
+        <h3 class="prog-title">Mérhető fejlődés — ami neked számít</h3>
+        <p class="prog-lead">Nincs konkrét határidő, és nem ígérek „áttörést X hét alatt". Amit ígérek: látni fogod magadon, hogy haladsz. Először az önbizalom jön — aztán a szavak, a kifejezések, a folyamatos beszéd. És ha eddig eljutottunk, onnan már a te döntésed, milyen messzire mész.</p>
         <div class="prog-outcomes">
-          <p class="prog-outcomes-lbl">Eredmény</p>
+          <p class="prog-outcomes-lbl">Amit kapsz</p>
           <ul class="prog-outcomes-list">
-            <li>Valódi magabiztosság élő beszédhelyzetben</li>
-            <li>Meeting, interjú, nyelvvizsga — kezelhetővé válik</li>
-            <li>Önálló tanulási képesség, ami rajtad múlik innen</li>
+            <li>Érezhető változás önbizalomban — legtöbb diáknál pár hét alatt</li>
+            <li>A passzív tudás aktívvá válik — strukturáltan, nem ad-hoc</li>
+            <li>Meeting, interjú, utazás, vizsga — kezelhetővé válik</li>
+            <li>Ha akarsz, évekig velem maradsz — ha nem, önállóan haladsz tovább</li>
           </ul>
         </div>
       </div>
@@ -1579,70 +1723,64 @@ footer{
 <!-- PRICING -->
 <section class="pkg-sec" id="csomagok">
   <div class="pkg-head r">
-    <p class="sec-eyebrow center">Válaszd ki a tempódat</p>
-    <h2 class="sec-h2 center">Három csomag. <em>Egy rendszer.</em></h2>
-    <p class="sec-lead center">A szintfelmérő után pontosan megmondom, melyik csomag illik hozzád. Minden csomag ugyanarra a rendszerre épül — a különbség a mélységben és a támogatás intenzitásában van.</p>
+    <p class="sec-eyebrow center">A csomagok</p>
+    <h2 class="sec-h2 center">Egy rendszer. Három tempó. <em>Te választod.</em></h2>
+    <p class="sec-lead center">Minden csomag ugyanazt a rendszert adja — a teljes tanulói platformot, a saját Notion diákoldaladat, az AI visszajelzést az én hangomon. Csak abban különböznek, hányszor találkozunk élőben egy héten.</p>
   </div>
   <div class="pkg-grid">
 
     <div class="pkg r">
       <p class="pkg-lbl">Alap</p>
       <h3 class="pkg-n">Basic</h3>
-      <p class="pkg-sub">Belépőszint — heti egy közös óra, ha lépésről lépésre építenéd fel magad</p>
+      <p class="pkg-sub">„Ha ráérsz, ha nem sürget semmi."</p>
       <div class="pkg-price">35 000 Ft</div>
       <div class="pkg-price-unit">/ hónap</div>
       <ul class="pkg-list">
-        <li><strong>1 × 45 perc</strong> élő mentorálás hetente</li>
-        <li>Online tanulói platform hozzáférés</li>
-        <li>24/7 AI visszajelzés a gyakorlásodra</li>
-        <li>Strukturált alaptananyag</li>
-        <li>Quizek, tesztek, szókártyák</li>
-        <li class="strike">Saját Notion diákoldal</li>
-        <li class="strike">Személyre szabott fejlődési terv</li>
-        <li class="strike">24 órás személyes válasz</li>
+        <li><strong>1 × 45 perc</strong> élő mentorálás hetente — velem</li>
+        <li><strong>Teljes tanulói platform</strong> — szintek · szekciók · elmélet · gyakorló · szószedet</li>
+        <li><strong>24/7 AI visszajelzés</strong> — az én hangomon, az én stílusomban</li>
+        <li><strong>Saját Notion diákoldal</strong> — ami csak a tiéd</li>
+        <li><strong>Személyre szabott fejlődési terv</strong> — a te célodhoz igazítva</li>
       </ul>
+      <p class="pkg-fit"><strong>Neked való, ha:</strong> fejlődni akarsz, de nincs határidő. A saját tempódban haladsz, és a heti egy közös óra az, ami átlök a nehéz pontokon.</p>
       <a href="/szintfelmero" class="pkg-btn">Szintfelmérőt kérek →</a>
     </div>
 
     <div class="pkg hot r d1">
-      <p class="pkg-lbl">Legtöbb választja</p>
+      <p class="pkg-lbl">Legnépszerűbb</p>
       <h3 class="pkg-n">Standard</h3>
-      <p class="pkg-sub">Itt kezd összeállni minden. A rendszer teljes ereje, személyre szabva.</p>
+      <p class="pkg-sub">„Itt kezd összeállni minden."</p>
       <div class="pkg-price">65 000 Ft</div>
       <div class="pkg-price-unit">/ hónap</div>
       <ul class="pkg-list">
-        <li><strong>2 × 45 perc</strong> élő mentorálás hetente</li>
-        <li>Minden a Basic csomagból</li>
-        <li>Saját Notion diákoldal</li>
-        <li>Személyre szabott fejlődési terv</li>
-        <li>A te szintedre szabott anyagok</li>
-        <li>Strukturált, heti ritmus</li>
-        <li class="strike">24 órás személyes válasz</li>
-        <li class="strike">Prioritás időpontfoglalás</li>
+        <li><strong>2 × 45 perc</strong> élő mentorálás hetente — velem</li>
+        <li><strong>Minden, ami a Basic-ben van</strong></li>
+        <li><strong>Strukturált, heti ritmus</strong> — két fix találkozó, két fix nekigyürkőzés</li>
+        <li><strong>Gyorsabb hibajavítás</strong> — kétszer annyi élő kapcsolat veled</li>
       </ul>
+      <p class="pkg-fit"><strong>Neked való, ha:</strong> érezhető, gyorsabb fejlődést akarsz. Ez a legtöbb diákom választása — elég sűrű ahhoz, hogy lendületben maradj, de nem annyira intenzív, hogy kiégj.</p>
       <a href="/szintfelmero" class="pkg-btn">Szintfelmérőt kérek →</a>
     </div>
 
     <div class="pkg r d2">
       <p class="pkg-lbl">Prémium</p>
       <h3 class="pkg-n">Premium</h3>
-      <p class="pkg-sub">Gyorsabb, intenzívebb fejlődés. Ha céldátumod van, ez a tiéd.</p>
+      <p class="pkg-sub">„Ha konkrét céldátumod van."</p>
       <div class="pkg-price">95 000 Ft</div>
       <div class="pkg-price-unit">/ hónap</div>
       <ul class="pkg-list">
-        <li><strong>3 × 45 perc</strong> élő mentorálás hetente</li>
-        <li>Minden a Standard csomagból</li>
-        <li><strong>24 órán belüli</strong> személyes válasz tőlem</li>
-        <li>Prioritás időpontfoglalás</li>
-        <li>Intenzív felkészítés konkrét céldátumra</li>
-        <li>Haladóbb szintű feladatok</li>
-        <li>Extra tesztek és gyakorlóanyagok</li>
-        <li>Teljes fókusz a te eredményedre</li>
+        <li><strong>3 × 45 perc</strong> élő mentorálás hetente — velem</li>
+        <li><strong>Minden, ami a Standard-ben van</strong></li>
+        <li><strong>24 órán belüli személyes válasz tőlem</strong> — amikor elakadsz, nem várunk a következő órára</li>
+        <li><strong>Prioritás időpontfoglalás</strong> — a te órád akkor, amikor neked jó</li>
+        <li><strong>Intenzív felkészítés konkrét céldátumra</strong> — vizsga, interjú, utazás, határidő</li>
       </ul>
+      <p class="pkg-fit"><strong>Neked való, ha:</strong> van egy napod a naptárban, amire készülnöd kell. 3–4 hónap alatt látványos ugrás, ha tartod a tempót.</p>
       <a href="/szintfelmero" class="pkg-btn">Szintfelmérőt kérek →</a>
     </div>
 
   </div>
+  <p class="pkg-note">Bármikor válthatsz csomagot, ha változik az életed. Nem kell előre eldöntened, hogy évekig ugyanazt akarod.</p>
 </section>
 
 <!-- TESTIMONIALS (text cards) -->
@@ -1708,14 +1846,14 @@ footer{
 
 <!-- FINAL CTA -->
 <section class="final-sec">
-  <p class="sec-eyebrow center r">A fordulópont</p>
-  <h2 class="r d1">Ha készen állsz, hogy valaki végre <em>fogja a kezed</em></h2>
-  <p class="r d2">Eleget voltál egyedül a bizonytalansággal. Most itt vagyok — türelmesen, melletted, a saját tempódban. Nem kell tökéletesnek lenned.</p>
-  <p class="r d3"><em class="plain" style="color:#1a1410;font-style:italic">Csak el kell kezdened.</em></p>
-  <div class="final-portrait r d4">
+  <p class="sec-eyebrow center r">Még egy dolog</p>
+  <h2 class="r d1">Ha idáig eljutottál a landingen, <em>már érzed, hogy kellene valami.</em></h2>
+  <p class="r d2">A szintfelmérő ingyenes, és 24 órán belül én válaszolok rá — személyesen. Nincs automata, nincs kötelezettség, nincs nyomás.</p>
+  <div class="final-portrait r d3">
     <img src="images/bettina-baranyi-3.png" alt="Bettina Baranyi" loading="lazy">
   </div>
-  <a href="/szintfelmero" class="btn-dark r d5">Kitöltöm a szintfelmérőt</a>
+  <a href="/szintfelmero" class="btn-dark r d4">Kitöltöm a szintfelmérőt</a>
+  <p class="final-foot r d5">Utána eldöntöd, indulunk-e együtt. Ha igen, én javaslok csomagot, ami illik hozzád. Ha nem, akkor is lesz egy tiszta képed arról, hol tartasz.</p>
 </section>
 
 <!-- FAQ -->
@@ -1747,7 +1885,7 @@ footer{
     </div>
     <div class="faq-item">
       <div class="faq-q">Kapok visszajelzést az órákon kívül is?</div>
-      <div class="faq-a">Igen. Standard és Premium csomagban 24/7 AI visszajelzést kapsz — azonnal, amint beírsz egy mondatot vagy elkészítesz egy feladatot. Premium csomagban én 24 órán belül válaszolok személyesen is a kérdéseidre.</div>
+      <div class="faq-a">Igen. Mindegyik csomagban 24/7 AI visszajelzést kapsz — azonnal, amint beírsz egy mondatot vagy elkészítesz egy feladatot. Premium csomagban én 24 órán belül válaszolok személyesen is a kérdéseidre.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">És ha időközben rájövök, hogy nem nekem való?</div>
