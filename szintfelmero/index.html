@@ -712,6 +712,102 @@ footer a:hover{color:var(--orange)}
   }
   .screen.active > *{opacity:1!important;animation:none!important;transform:none!important;filter:none!important}
 }
+
+/* ============================================================
+   MODERN GLASS REFRESH — same palette (black / orange / white),
+   added depth, frosted surfaces, softer radii. Content unchanged.
+   ============================================================ */
+
+/* Frosted glass quiz panel */
+.card{
+  background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
+  padding:56px 52px;
+  backdrop-filter:blur(22px) saturate(125%);
+  -webkit-backdrop-filter:blur(22px) saturate(125%);
+  box-shadow:0 40px 90px -24px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.09);
+}
+@media (max-width:520px){
+  .card{padding:32px 22px;border-radius:22px}
+}
+
+/* Buttons — softer, deeper, modern highlight */
+.btn{
+  border-radius:16px;
+  box-shadow:0 16px 38px -8px rgba(212,118,59,.42),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.btn:hover:not(:disabled){
+  box-shadow:0 24px 54px -10px rgba(212,118,59,.52),inset 0 1px 0 rgba(255,255,255,.25);
+}
+.btn-secondary{
+  border-radius:14px;
+  background:rgba(255,255,255,.03);
+  box-shadow:none;
+}
+
+/* Options — glassy cards that glow on interaction */
+.opt{
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+.opt:hover{
+  border-color:rgba(212,118,59,.5);
+  background:rgba(212,118,59,.07);
+  box-shadow:0 12px 32px -12px rgba(212,118,59,.4);
+}
+.opt.selected{
+  border-color:var(--orange);
+  background:linear-gradient(135deg,rgba(212,118,59,.15),rgba(212,118,59,.03));
+  box-shadow:0 14px 36px -12px rgba(212,118,59,.5),inset 0 0 0 1px rgba(212,118,59,.3);
+}
+
+/* Inputs — glassy with a modern focus ring */
+input[type="text"],input[type="email"],textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;
+}
+input[type="text"]:focus,input[type="email"]:focus,textarea:focus{
+  background:rgba(255,255,255,.06);
+  border-color:var(--orange);
+  box-shadow:0 0 0 4px rgba(212,118,59,.16);
+}
+
+/* Left-accent blocks — keep the orange bar, round the open corners larger */
+.q-quote,.result-focus,.pain-stat,.result-pain-lead,.rec-pkg-proof{
+  border-radius:0 16px 16px 0;
+}
+.q-quote{background:rgba(255,255,255,.04)}
+.result-focus{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.10)}
+
+/* Full-radius surface blocks */
+.next-steps,.thankyou-step,.error-msg{border-radius:16px}
+.next-steps,.thankyou-step{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.10);
+}
+
+/* Recommended package — deeper modern elevation */
+.rec-pkg{
+  border-radius:24px;
+  background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  box-shadow:0 40px 90px -28px rgba(0,0,0,.75),0 0 0 1px rgba(212,118,59,.5),inset 0 1px 0 rgba(255,255,255,.09);
+}
+
+/* Result badge — refined pill */
+.result-badge{
+  box-shadow:0 14px 36px -8px rgba(212,118,59,.45),inset 0 1px 0 rgba(255,255,255,.3);
+}
+
+/* Progress track — subtle translucent rail */
+.progress-wrap{background:rgba(255,255,255,.06)}
+
+/* Spinner — match the lighter glass borders */
+.spinner{border-color:rgba(255,255,255,.12);border-top-color:var(--orange)}
 </style>
 </head>
 <body>
